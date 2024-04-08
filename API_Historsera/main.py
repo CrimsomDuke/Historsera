@@ -1,11 +1,29 @@
+from flask import Flask, jsonify
+from flask_cors import CORS
+from app.config import DevelopmentConfig
+from app import create_app
+from app.models import db
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+app = create_app()
+db.init_app(app);
+CORS(app);
 
 
-# Press the green button in the gutter to run the script.
+@app.route('/')
+def index():
+    endpoints = {
+        'users': '/users',
+        'courses': '/courses',
+        'categories': '/categories',
+        'lectures': '/lectures',
+        'administrators': '/administrators',
+        'titles': '/titles',
+        'user_takes_lecture': '/user_takes_lecture',
+        'user_enrolled_in_course': '/user_enrolled_in_course',
+    }
+
+    return jsonify(endpoints)
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    app.run(debug=True)

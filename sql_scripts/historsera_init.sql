@@ -14,7 +14,7 @@ CREATE  TABLE tbl_users (
 
 CREATE  TABLE tbl_courses ( 
 	course_id            SERIAL  NOT NULL  ,
-	course_name                 varchar(100)  NOT NULL  ,
+	course_name          varchar(100)  NOT NULL  ,
 	author               varchar(50)  NOT NULL  ,
 	description          varchar(350)    ,
 	ref_image_path       varchar(350)    ,
@@ -35,7 +35,7 @@ CREATE  TABLE tbl_lectures (
 	is_video             boolean  NOT NULL  ,
 	file_path            varchar(350)    ,
 	link                 varchar(350),
-	duration_sec         integer    ,
+	order_num 			 integer DEFAULT 1,
 	course_id            integer  NOT NULL  ,
 	CONSTRAINT pk_tbl_lectures PRIMARY KEY ( lecture_id )
  );

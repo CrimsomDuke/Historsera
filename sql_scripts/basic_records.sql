@@ -15,9 +15,9 @@ INSERT INTO tbl_courses (course_name, author, description, ref_image_path, categ
 VALUES ('Historia de la antigua Grecia', 'Ryan Stitt', 'Este curso explorará la historia de la Grecia antigua y sus aportes',
 'C:\Users\PC\Desktop\CrimsomDuke\tareas\Semestre_5\Web_I\Final_Project\Historsera\media\images', 'Historia antigua');
 
-INSERT INTO tbl_lectures (title, description, is_video, file_path, link, duration_sec, course_id)
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
 VALUES ('Que sea Grecia!', 'Veamos como inicia grecia', TRUE, NULL, 
-'https://www.youtube.com/watch?v=AlHn5bi-KiY&list=PLYoEIAhIdxYsn0Hael8PfYTbirBrvo6QR&index=1&pp=iAQB', 1, 1);
+'https://www.youtube.com/watch?v=AlHn5bi-KiY&list=PLYoEIAhIdxYsn0Hael8PfYTbirBrvo6QR&index=1&pp=iAQB', 1);
 
 INSERT INTO tbl_user_enrolled_in_course VALUES (1, 1);
 INSERT INTO tbl_user_takes_lecture VALUES (1, 1);

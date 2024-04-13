@@ -35,7 +35,7 @@ CREATE  TABLE tbl_lectures (
 	is_video             boolean  NOT NULL  ,
 	file_path            varchar(350)    ,
 	link                 varchar(350),
-	order_num 			 integer DEFAULT 1,
+	order_num 			 integer DEFAULT 0,
 	course_id            integer  NOT NULL  ,
 	CONSTRAINT pk_tbl_lectures PRIMARY KEY ( lecture_id )
  );
@@ -62,6 +62,8 @@ CREATE  TABLE tbl_user_enrolled_in_course (
 	CONSTRAINT pk_tbl_user_enrolled_in_course PRIMARY KEY ( user_id )
  );
 
+----------- TABLE MODIFICATIONS
+
 ALTER TABLE "public".tbl_user_enrolled_in_course ADD CONSTRAINT fk_tbl_user_enrolled_in_course_user_id FOREIGN KEY ( user_id ) REFERENCES "public".tbl_users( id );
 ALTER TABLE "public".tbl_user_enrolled_in_course ADD CONSTRAINT fk_tbl_user_enrolled_in_course_course_id FOREIGN KEY ( course_id ) REFERENCES "public".tbl_courses( course_id );
 ALTER TABLE "public".tbl_user_takes_lecture ADD CONSTRAINT fk_tbl_user_takes_course FOREIGN KEY ( user_id ) REFERENCES "public".tbl_users( id );
@@ -70,3 +72,35 @@ ALTER TABLE "public".tbl_administrators ADD CONSTRAINT fk_tbl_administrators FOR
 ALTER TABLE "public".tbl_lectures ADD CONSTRAINT fk_tbl_lectures_tbl_courses FOREIGN KEY ( course_id ) REFERENCES "public".tbl_courses( course_id );
 ALTER TABLE "public".tbl_courses ADD CONSTRAINT fk_tbl_courses_tbl_categories FOREIGN KEY ( category_name ) REFERENCES "public".tbl_categories( category_name );
 ALTER TABLE "public".tbl_users ADD CONSTRAINT fk_tbl_users_tbl_titles FOREIGN KEY ( title_name ) REFERENCES "public".tbl_titles ( title_name );
+
+------------------------ REQUIRED TRIGGERS ---------------------------------
+CREATE OR REPLACE FUNCTION  sp_LEC_assign_order_num()
+RETURNS TRIGGER AS 
+$$
+DECLARE 
+	current_num integer;
+
+BEGIN
+
+	SELECT COUNT(tl.course_id) INTO current_num FROM tbl_lectures tl
+	JOIN tbl_courses tc ON tl.course_id = tc.course_id
+	WHERE tl.course_id = NEW.course_id	
+	GROUP BY tl.course_id;
+
+	IF (current_num IS null) THEN
+		NEW.order_num := 1;
+		RETURN NEW;
+	END IF;
+
+	
+	NEW.order_num := current_num + 1;
+	RETURN NEW;
+	
+END
+$$
+LANGUAGE PLPGSQL;
+
+CREATE OR REPLACE TRIGGER order_num_trigger
+BEFORE INSERT ON tbl_lectures
+FOR EACH ROW 
+EXECUTE FUNCTION sp_LEC_assign_order_num();

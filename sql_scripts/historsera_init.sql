@@ -52,14 +52,12 @@ CREATE TABLE tbl_titles (
 CREATE  TABLE tbl_user_takes_lecture ( 
 	user_id              integer  NOT NULL  ,
 	lecture_id           integer  NOT NULL  ,
-	is_finished          boolean DEFAULT false NOT NULL  ,
-	CONSTRAINT pk_tbl_user_takes_course PRIMARY KEY ( user_id )
+	is_finished          boolean DEFAULT false NOT NULL
  );
 
 CREATE  TABLE tbl_user_enrolled_in_course ( 
 	user_id              integer  NOT NULL  ,
-	course_id            integer  NOT NULL  ,
-	CONSTRAINT pk_tbl_user_enrolled_in_course PRIMARY KEY ( user_id )
+	course_id            integer  NOT NULL
  );
 
 ----------- TABLE MODIFICATIONS

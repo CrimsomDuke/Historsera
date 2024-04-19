@@ -34,7 +34,7 @@ class Course(db.Model):
     author = db.Column(db.String(50));
     description = db.Column(db.String(350));
     ref_image_path = db.Column(db.String(350));
-    category_name = db.Column(db.String(150));
+    category_name = db.Column(db.String(150), db.ForeignKey('tbl_categories.category_name'));
 
     def to_dict(self):
         return {
@@ -65,7 +65,7 @@ class Lecture(db.Model):
     is_video = db.Column(db.Boolean);
     file_path = db.Column(db.String(350));
     link = db.Column(db.String(350));
-    duration_sec = db.Column(db.Integer);
+    order_num = db.Column(db.Integer);
     course_id = db.Column(db.Integer, db.ForeignKey('tbl_courses.course_id'));
 
     def to_dict(self):
@@ -76,7 +76,7 @@ class Lecture(db.Model):
             "is_video": self.is_video,
             "file_path": self.file_path,
             "link": self.link,
-            "duration_sec": self.duration_sec,
+            "order_num": self.order_num,
             "course_id": self.course_id
         }
 
@@ -118,11 +118,9 @@ class UserEnrolledInCourse(db.Model):
     __tablename__ = 'tbl_user_enrolled_in_course';
     user_id = db.Column(db.Integer, db.ForeignKey('tbl_users.id'), primary_key=True);
     course_id = db.Column(db.Integer, db.ForeignKey('tbl_courses.course_id'), primary_key=True);
-    is_finished = db.Column(db.Boolean);
 
     def to_dict(self):
         return {
             "user_id": self.user_id,
-            "course_id": self.course_id,
-            "is_finished": self.is_finished
+            "course_id": self.course_id
         }

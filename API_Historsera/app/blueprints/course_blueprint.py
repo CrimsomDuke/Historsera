@@ -54,7 +54,8 @@ def delete_course(course_id):
 
 @course_blueprint.route("/get_by_category/<string:category_name>", methods=["GET"])
 def get_courses_by_category(category_name):
-    courses = Course.query.filter_by(category_name=category_name).all()
+    print(Course.category_name.like(f"%{category_name}%"));
+    courses = Course.query.filter(Course.category_name.like(f"%{category_name}%")).all()
     courses_list = []
     for course in courses:
         courses_list.append(course.to_dict())
@@ -62,7 +63,7 @@ def get_courses_by_category(category_name):
 
 @course_blueprint.route("/get_by_author/<string:author>", methods=["GET"])
 def get_courses_by_author(author):
-    courses = Course.query.filter_by(author=author).all()
+    courses = Course.query.filter(Course.author.like(f"%{author}%")).all()
     courses_list = []
     for course in courses:
         courses_list.append(course.to_dict())
@@ -70,7 +71,7 @@ def get_courses_by_author(author):
 
 @course_blueprint.route("/get_by_name/<string:course_name>", methods=["GET"])
 def get_courses_by_name(course_name):
-    courses = Course.query.filter_by(course_name=course_name).all()
+    courses = Course.query.filter(Course.course_name.like(f"%{course_name}%")).all()
     courses_list = []
     for course in courses:
         courses_list.append(course.to_dict())

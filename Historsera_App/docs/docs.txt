@@ -1,0 +1,5 @@
+
+Here I will take note of my CSS classes, html components and js practices and conventions
+
+CSS classes:
+.block : This class will help me to to display inline multiple divs 

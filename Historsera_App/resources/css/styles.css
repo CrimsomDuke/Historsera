@@ -1,0 +1,51 @@
+
+body{
+    background-color: #f8e6c6;
+}
+
+.navbar{
+   background-color: white;
+   border-style: solid;
+   border-color: black;
+   border-width: 2px; 
+   display: flex;
+}
+
+.navbar a{
+    border-style: solid;
+    border-color: black;
+    border-width: 2px; 
+    padding: 30px;
+    position: relative;
+}
+
+.block{
+    display: flex;
+    padding: 50px;
+}
+
+.block > *{
+    margin: 50px;   
+}
+
+.form > *{
+    margin: 10px;
+    font-size: 20px;
+}
+
+.form#registerForm{
+    display: flexbox;
+    padding: 50px;
+    background-color: white;
+}
+
+.form > p{
+    text-align: center;
+    margin: 30px;
+}
+
+.form#registerForm > button{
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+}

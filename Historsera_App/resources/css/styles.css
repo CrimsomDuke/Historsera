@@ -1,6 +1,6 @@
 
 body{
-    background-color: #f8e6c6;
+    background-color: #9D9B91;
 }
 
 .navbar{
@@ -22,10 +22,23 @@ body{
 .block{
     display: flex;
     padding: 50px;
+    justify-content: center;
+}
+
+.block a:visited, .block a:link, .block a:active{
+    color: black;
+    text-decoration: none;
+}
+
+.block a:hover{
+    color: rgb(255, 253, 119);
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .block > *{
-    margin: 50px;   
+    margin: 50px;
 }
 
 .form > *{
@@ -37,6 +50,7 @@ body{
     display: flexbox;
     padding: 50px;
     background-color: white;
+    margin: 0 auto;
 }
 
 .form > p{
@@ -48,4 +62,71 @@ body{
     text-align: center;
     display: block;
     margin: 20px auto;
+}
+
+#welcomeMessagePanel h1{
+    font-size: 50px;
+    font-style: italic;
+}
+
+#welcomeMessagePanel  h3{
+    font-size: 30px;
+}
+
+.categoriesPanel{
+    justify-content: center;
+    margin: 0 auto;
+    background-color: #B4B1A8;
+    padding: 20px;
+    min-width: 40%;
+}
+
+.categoriesPanel > h2{
+    text-align: center;
+    margin: 20px;
+}
+
+.categoriesPanel li {
+    list-style-type: none;
+    padding: 20px;
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coursesPanel{
+    margin: 0 auto;
+    background-color: #B4B1A8;
+    padding: 20px;
+    min-width: 40%;
+    text-align: center;
+}
+
+.courseHomeComponent{
+    background-color: white;
+    display: flex;
+    text-align: center;
+    min-width: 80%;
+    padding: 20px;
+    margin: 20px;
+}
+
+.courseHomeComponent a{
+    display: flex;
+    text-align: center;
+    min-width: 90%;
+    padding: 10px;
+    margin: 10px;
+}
+
+.courseHomeComponent img{
+    width: 200px;
+}
+
+.courseHomeComponent  p{
+    margin: 0 auto;
 }

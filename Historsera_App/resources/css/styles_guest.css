@@ -3,26 +3,49 @@ body{
     background-color: #9D9B91;
 }
 
-.navbar{
-   background-color: white;
-   border-style: solid;
-   border-color: black;
-   border-width: 2px; 
-   display: flex;
+button{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-style: italic;
+    background-color: grey;
+    padding: 5px;
+    padding-inline: 40px;
+    border-radius: 10%;
 }
 
-.navbar a{
-    border-style: solid;
-    border-color: black;
-    border-width: 2px; 
-    padding: 30px;
-    position: relative;
+input[type="text"], input[type="password"], input[type="email"]{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-style: italic;
+    padding: 5px;
 }
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    border-style: solid;
+    justify-content: space-between;
+}
+
+
+.navbar a{
+    padding: 20px;
+    text-decoration: none;
+    margin: 0 10px; 
+    background-position-x: left;
+}
+
 
 .block{
     display: flex;
     padding: 50px;
     justify-content: center;
+    margin-top: 30px;
 }
 
 .block a:visited, .block a:link, .block a:active{
@@ -30,17 +53,21 @@ body{
     text-decoration: none;
 }
 
-.block a:hover{
-    color: rgb(255, 253, 119);
+.block a:hover, .navbar a:hover{
+    color: rgb(255, 252, 68);
     background-color: black;
     border-radius: 10px;
     padding: 10px;
+    font-size: 20px;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .block > *{
-    margin: 50px;
+    margin: 30px;
 }
 
+/* Home */
 .form > *{
     margin: 10px;
     font-size: 20px;
@@ -67,6 +94,13 @@ body{
 #welcomeMessagePanel h1{
     font-size: 50px;
     font-style: italic;
+    text-align: center;
+    transition: transform 1000ms, opacity 14ms;
+}
+
+#welcomeMessagePanel h1:hover{
+    transform: scale(2, 2);
+    color: rgb(255, 252, 68);
 }
 
 #welcomeMessagePanel  h3{
@@ -77,13 +111,14 @@ body{
     justify-content: center;
     margin: 0 auto;
     background-color: #B4B1A8;
-    padding: 20px;
+    padding-right: 30px;
     min-width: 40%;
 }
 
 .categoriesPanel > h2{
     text-align: center;
     margin: 20px;
+    padding: 20px;
 }
 
 .categoriesPanel li {
@@ -111,8 +146,8 @@ body{
     display: flex;
     text-align: center;
     min-width: 80%;
-    padding: 20px;
     margin: 20px;
+    max-height: 150px;;
 }
 
 .courseHomeComponent a{
@@ -130,3 +165,6 @@ body{
 .courseHomeComponent  p{
     margin: 0 auto;
 }
+
+/* end of Home */
+

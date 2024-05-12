@@ -46,6 +46,7 @@ CREATE  TABLE tbl_administrators (
 
 CREATE TABLE tbl_titles (
 	title_name			varchar(100) NOT NULL,
+	points_required 	integer NOT NULL DEFAULT 0,
 	CONSTRAINT pk_tbl_titles PRIMARY KEY ( title_name )
 );
 
@@ -72,6 +73,7 @@ ALTER TABLE "public".tbl_courses ADD CONSTRAINT fk_tbl_courses_tbl_categories FO
 ALTER TABLE "public".tbl_users ADD CONSTRAINT fk_tbl_users_tbl_titles FOREIGN KEY ( title_name ) REFERENCES "public".tbl_titles ( title_name );
 
 ------------------------ REQUIRED TRIGGERS ---------------------------------
+-- This trigger is called when a a Lecture is created in order to asign its order_num
 CREATE OR REPLACE FUNCTION  sp_LEC_assign_order_num()
 RETURNS TRIGGER AS 
 $$

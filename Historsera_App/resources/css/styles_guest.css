@@ -44,7 +44,6 @@ input[type="text"], input[type="password"], input[type="email"]{
 .block{
     display: flex;
     padding: 50px;
-    justify-content: center;
     margin-top: 30px;
 }
 
@@ -147,7 +146,7 @@ input[type="text"], input[type="password"], input[type="email"]{
     text-align: center;
     min-width: 80%;
     margin: 20px;
-    max-height: 150px;;
+    max-height: 150px;
 }
 
 .courseHomeComponent a{
@@ -168,3 +167,52 @@ input[type="text"], input[type="password"], input[type="email"]{
 
 /* end of Home */
 
+.search{
+    justify-content: right;
+    padding: 20px;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.search > .titleLabel{
+    font-size: 30px;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.coursesGroup{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.courseComponent{
+    background-color: white;
+    padding: 10px;
+    max-width: 40%;
+    height: 220px;
+    border-radius: 10px;
+}
+
+.courseComponent a{
+    display: flex;
+    padding: 10px;
+    min-width: 30%;
+    max-height:200px;
+    overflow: hidden;
+}
+
+.courseComponent a:hover{
+    font-size: 20px;
+    overflow: auto;
+}
+
+.courseComponent img{
+    width: 150px;
+    height: 200px;
+}
+
+.courseComponent .textDivisor{
+    justify-content: center;
+    padding: 10px;
+}

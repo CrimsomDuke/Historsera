@@ -64,7 +64,7 @@ input[type="text"], input[type="password"], input[type="email"]{
     background-color: black;
     border-radius: 10px;
     padding: 10px;
-    font-size: 20px;
+    font-size: 120%;
     font-style: italic;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -122,6 +122,7 @@ input[type="text"], input[type="password"], input[type="email"]{
     background-color: #B4B1A8;
     padding-right: 30px;
     min-width: 40%;
+    font-size: 30px;
 }
 
 .categoriesPanel > h2{
@@ -148,12 +149,12 @@ input[type="text"], input[type="password"], input[type="email"]{
     padding: 20px;
     min-width: 40%;
     text-align: center;
+    font-size: 30px;
 }
 
 .courseHomeComponent{
     background-color: white;
     display: flex;
-    text-align: center;
     min-width: 80%;
     margin: 20px;
     max-height: 150px;
@@ -162,9 +163,8 @@ input[type="text"], input[type="password"], input[type="email"]{
 .courseHomeComponent a{
     display: flex;
     text-align: center;
-    min-width: 90%;
+    min-width: 100%;
     padding: 10px;
-    margin: 10px;
 }
 
 .courseHomeComponent img{
@@ -194,6 +194,7 @@ input[type="text"], input[type="password"], input[type="email"]{
 .coursesGroup{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     padding: 10px;
 }
 
@@ -254,7 +255,7 @@ input[type="text"], input[type="password"], input[type="email"]{
 }
 
 .courseHeader .textDivisor p{
-    font-size: 15px;
+    font-size: 1vw;
     padding: 10px;
 }
 
@@ -293,4 +294,91 @@ input[type="text"], input[type="password"], input[type="email"]{
     color: rgb(255, 252, 68);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
+}
+
+/*Media queries*/
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+
+    body *{
+        font-size: 50px;
+    }
+    .block{
+        flex-direction: column;
+    }
+
+    #welcomeMessagePanel h1{
+        font-size: 70px;
+    }
+
+    #welcomeMessagePanel h3{
+        font-size: 50px;
+    }
+
+    #registerForm{
+        text-align: center;
+        width: 90%;
+
+    }
+    #registerForm *{
+        font-size: 50px;
+        
+    }
+
+    .categoriesPanel{
+        min-width: 100%;
+    }
+
+    .coursesPanel{
+        min-width: 100%;
+    }
+
+    /*Catalog*/
+    .coursesGroup{
+        flex-direction: column;
+    }
+
+    .courseComponent{
+        max-width: 100%;
+    }
+
+    .search{
+        margin-top: 90px;
+    }
+
+    .search{
+        justify-content: center;
+        padding: 20px;
+        justify-content: space-between;
+    }
+    
+    .search > .titleLabel{
+        font-size: 70px;
+    }
+
+    .search #searchForm{
+        display: flex;
+        max-width: 100%;
+        flex-direction: column;
+    }
+
+    #searchForm *{
+        font-size: 50px;
+    }
+
+    /*Course*/
+    .courseHeader{
+        flex-direction: column;
+    }
+    .courseHeader h1{
+        text-align: center;
+    }
+    .courseHeader img{
+        width: 100%;
+        height: 500px;
+    }
+
+    .courseHeader .textDivisor p{
+        font-size: 2vw;
+    }
+
 }

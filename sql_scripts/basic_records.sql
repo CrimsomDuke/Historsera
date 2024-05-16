@@ -159,6 +159,27 @@ VALUES ('La republica de Venecia', 'Como realmente funciona Venecia', TRUE, NULL
 'https://www.youtube.com/watch?v=7cHK4xzAhzE&list=PLhef45iXo5mWJeoQJUWIily8gNmV8GjmD&index=5&pp=iAQB', 4);
 
 --curso 5
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('La leyenda Negra', 'Que hay realmente detras de la leyenda negra estadounidense?', TRUE, NULL,
+'https://www.youtube.com/watch?v=6E9WU9TGrec&list=PL8dPuuaLjXtMwmepBjTSG593eG7ObzO7s&index=2&pp=iAQB', 5);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('Dia de accion de gracias', 'Costumbre de la epoca colonial', TRUE, 'C:\MediaTemp\pdfs\sample-1.pdf',
+'https://www.youtube.com/watch?v=o69TvQqyGdg&list=PL8dPuuaLjXtMwmepBjTSG593eG7ObzO7s&index=3&pp=iAQB', 5);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('La leyenda Negra', 'Que hay realmente detras de la leyenda negra estadounidense?', TRUE, NULL,
+'https://www.youtube.com/watch?v=6E9WU9TGrec&list=PL8dPuuaLjXtMwmepBjTSG593eG7ObzO7s&index=2&pp=iAQB', 5);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('Nativos y colonizadores', 'Choque de mundos', TRUE, NULL,
+'https://www.youtube.com/watch?v=TTYOQ05oDOI&list=PL8dPuuaLjXtMwmepBjTSG593eG7ObzO7s&index=4&pp=iAQB', 5);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('La guerra de los 7 años', 'polvora para la revolucion', TRUE, NULL,
+'https://www.youtube.com/watch?v=5vKGU3aEGss&list=PL8dPuuaLjXtMwmepBjTSG593eG7ObzO7s&index=6&pp=iAQB', 5);
+
+--curso 6
 
 
 

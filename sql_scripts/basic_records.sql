@@ -180,7 +180,105 @@ VALUES ('La guerra de los 7 años', 'polvora para la revolucion', TRUE, NULL,
 'https://www.youtube.com/watch?v=5vKGU3aEGss&list=PL8dPuuaLjXtMwmepBjTSG593eG7ObzO7s&index=6&pp=iAQB', 5);
 
 --curso 6
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('Hijos del sol', 'Los pueblos indigenas', TRUE, NULL,
+'https://www.youtube.com/watch?v=1Iwf02w80H8&list=PLkarkpW5fDPuDeRD6Ff-D0gEjwxes4otL&index=1&pp=iAQB', 6);
 
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('Mas alla de los Andes', 'Explorando mas territorios', TRUE, NULL,
+'https://www.youtube.com/watch?v=15aWP0jDbvg&list=PLkarkpW5fDPuDeRD6Ff-D0gEjwxes4otL&index=2&pp=iAQB', 6);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('Constitucion', 'La primera constitucion', TRUE, NULL,
+'https://www.youtube.com/watch?v=HwGoSYXk9uI&list=PLkarkpW5fDPuDeRD6Ff-D0gEjwxes4otL&index=3&pp=iAQB', 6);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('Los caminos al mar', 'La guerra del pacifico', TRUE, NULL,
+'https://www.youtube.com/watch?v=hjAeijum1BM&list=PLkarkpW5fDPuDeRD6Ff-D0gEjwxes4otL&index=4&pp=iAQB', 6);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('La guerra federal', 'Guerra federal', TRUE, NULL,
+'https://www.youtube.com/watch?v=3YsetEd2HSw&list=PLkarkpW5fDPuDeRD6Ff-D0gEjwxes4otL&index=5&pp=iAQB', 6);
+
+-- curso 7
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('Introduccion', 'Comencemos el viaje', TRUE, NULL,
+'https://www.youtube.com/watch?v=X393RFZe9PQ&list=PLST0MQhigVdYP5v3Xw1mpIKgI74oJdqKp&index=1&pp=iAQB', 7);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('Mexico Prehispanico', 'Viaje antes de la colonia', TRUE, NULL,
+'https://www.youtube.com/watch?v=eWVBA0bC8WU&list=PLST0MQhigVdYP5v3Xw1mpIKgI74oJdqKp&index=2&pp=iAQB', 7);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('Mexico Colonial', 'EL mexico colonial', TRUE, NULL,
+'https://www.youtube.com/watch?v=_AUsXp9TPhw&list=PLST0MQhigVdYP5v3Xw1mpIKgI74oJdqKp&index=3&pp=iAQB', 7);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('La guerra de la independencia', 'Grito libertario', TRUE, NULL,
+'https://www.youtube.com/watch?v=653AVoiLN9Q&list=PLST0MQhigVdYP5v3Xw1mpIKgI74oJdqKp&index=4&pp=iAQB', 7);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('La revolucion mexicana', 'Grito libertario', TRUE, NULL,
+'https://www.youtube.com/watch?v=EW4_Xk8pROE&list=PLST0MQhigVdYP5v3Xw1mpIKgI74oJdqKp&index=5&pp=iAQB', 7);
+
+-- curso 8
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('El nacimiento de una lengua', 'Inicios del inglés', TRUE, NULL,
+'https://www.youtube.com/watch?v=K1XQx9pGGd0&list=PLV50II2XzmY-9GLZWAuieOp27mZUQfKnj&index=1&pp=iAQB', 8);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('La aventura del inglés', 'Inicios del inglés', TRUE, NULL,
+'https://www.youtube.com/watch?v=DG7REAOG1kc&list=PLV50II2XzmY-9GLZWAuieOp27mZUQfKnj&index=2&pp=iAQB', 8);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('La batalla del lenguaje de la biblio', 'La biblia inglesa', TRUE, NULL,
+'https://www.youtube.com/watch?v=3cZR1EXGapc&list=PLV50II2XzmY-9GLZWAuieOp27mZUQfKnj&index=3&pp=iAQB', 8);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('Esta tierra y este reino', 'Los territorios ingleses', TRUE, NULL,
+'https://www.youtube.com/watch?v=1Kg63k5JDH8&list=PLV50II2XzmY-9GLZWAuieOp27mZUQfKnj&index=4&pp=iAQB', 8);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('El inglés en America', 'La lengua colonial', TRUE, NULL,
+'https://www.youtube.com/watch?v=oBqlVl0K9tw&list=PLV50II2XzmY-9GLZWAuieOp27mZUQfKnj&index=5&pp=iAQB', 8);
+
+--curso 9
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('Computes Science', 'Los inicios', TRUE, NULL,
+'https://www.youtube.com/watch?v=tpIctyqH29Q&list=PLIQNwgNJoeihYT642PFHtKS4-VUsVcYYc&index=1&pp=iAQB', 9);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('La computacion temprana', 'Los inicios de la computacion', TRUE, NULL,
+'https://www.youtube.com/watch?v=O5nskjZ_GoI&list=PLIQNwgNJoeihYT642PFHtKS4-VUsVcYYc&index=2&pp=iAQB', 9);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('La electronica', 'La electronica y computacion', TRUE, NULL,
+'https://www.youtube.com/watch?v=LN0ucKNX0hc&list=PLIQNwgNJoeihYT642PFHtKS4-VUsVcYYc&index=3&pp=iAQB', 9);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('Logica Booleana', 'Algebra de Bool', TRUE, NULL,
+'https://www.youtube.com/watch?v=gI-qXk7XojA&list=PLIQNwgNJoeihYT642PFHtKS4-VUsVcYYc&index=4&pp=iAQB', 9);
+
+--curso 10
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('Grecia', 'Los inicios de la filosofia', TRUE, NULL,
+'https://www.youtube.com/watch?v=Yat0ZKduW18&list=PL9GwT4_YRZdBf9nIUHs0zjrnUVl-KBNSM&index=1&pp=iAQB', 10);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('El universo moral', 'Un concepto importante', TRUE, NULL,
+'https://www.youtube.com/watch?v=c2dyP-OtruM&list=PL9GwT4_YRZdBf9nIUHs0zjrnUVl-KBNSM&index=2&pp=iAQB', 10);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('Los sofistas griegos', '', TRUE, NULL,
+'https://www.youtube.com/watch?v=yP3iSIszLeA&list=PL9GwT4_YRZdBf9nIUHs0zjrnUVl-KBNSM&index=3&pp=iAQB', 10);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('La epistemologia de Platon', 'Platon el Strongman', TRUE, NULL,
+'https://www.youtube.com/watch?v=5xVakHLDxAc&list=PL9GwT4_YRZdBf9nIUHs0zjrnUVl-KBNSM&index=4&pp=iAQB', 10);
+
+INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
+VALUES ('La teoria de las formas de Platon', 'Platon el Strongman y su teorias de las formas', TRUE, NULL,
+'https://www.youtube.com/watch?v=CClQSBvRszI&list=PL9GwT4_YRZdBf9nIUHs0zjrnUVl-KBNSM&index=5&pp=iAQB', 10);
 
 
 -- INSERT RELATIONSHIPS

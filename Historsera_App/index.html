@@ -4,81 +4,84 @@
         <title>Bienvenido a Historsera</title>
         <meta name="author" content="Sebastian Rengel Claros">
         <meta name="description" content="Plataforma de cursos de historia">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="resources/css/styles_guest.css">
     </head>
 
     <body>
         <nav class="navbar">
             <a href="index.html">Home</a>
-            <a href="resources/modules/auth/login.html">Log In</a>
+            <a href="resources/modules/guest_mode/auth/login.html">Log In</a>
         </nav>
 
-        <div class="block" id="registerBlock">
-            <div id="welcomeMessagePanel">
-                <h1 class="titleLabel">Historsera</h1>
-                <h3>
-                    Plataforma de cursos de historia universal
-                    hecha divertida para todos.
-                </h3>
-                <h3>
-                    Revive momentos épicos de la historia que cambiaron el curso de
-                    la civilización.
-                </h3>
-            </div>
-
-            <form id="registerForm" class="form">
-                <h3>
-                    Unete de manera gratuita y conoce la historia de
-                    este maravilloso mundo.
-                </h3>
-                <label for="username_field">Nombre de usuario</label><br>
-                <input type="text" id="username_field" name="username_field" required><br>
-                <label for="email_field">Correo electrónico</label><br>
-                <input type="email" id="email_field" name="email_field" required><br>
-                <label for="password_field">Contraseña</label><br>
-                <input type="password" id="password_field" name="password_field" required><br>
-
-                <button type="submit">Crear cuenta</button>
-                <p>
-                    ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a>
-                </p>
-            </form>
-        </div>
-
-        <div class="block">
-            <div class="categoriesPanel">
-                <h2>Algunas de nuestras categorías</h2>
-                <ul>
-                    <li><a href="resources/modules/guest_mode/courses/courses_catalog.html">Edad Antigua</a></li>
-                    <li><a href="resources/modules/guest_mode/courses/courses_catalog.html">Edad Media</a></li>
-                    <li><a href="resources/modules/guest_mode/courses/courses_catalog.html">Edad Moderna</a></li>
-                    <li><a href="resources/modules/guest_mode/courses/courses_catalog.html">Edad Contemporánea</a></li>
-                </ul>
-            </div>
-            <div class="coursesPanel" id="coursesPanel">
-                <h2>Explora nuestros cursos: </h2>
-                <div class="courseHomeComponent">
-                    <a class="stylish_link">
-                        <img src="resources/static/roman_empire.jpg" alt="Roman Empire">
-                        <p>Curso 1</p>
-                    </a>
+        <section clas="superContainer">
+            <div class="block" id="registerBlock">
+                <div id="welcomeMessagePanel">
+                    <h1 class="titleLabel">Historsera</h1>
+                    <h3>
+                        Plataforma de cursos de historia universal
+                        hecha divertida para todos.
+                    </h3>
+                    <h3>
+                        Revive momentos épicos de la historia que cambiaron el curso de
+                        la civilización.
+                    </h3>
                 </div>
-                <div class="courseHomeComponent">
-                    <a class="stylish_link">
-                        <img src="resources/static/roman_empire.jpg" alt="Roman Empire">
-                        <p>Curso 1</p>
-                    </a>
-                </div>
-                <div class="courseHomeComponent">
-                    <a class="stylish_link">
-                        <img src="resources/static/roman_empire.jpg" alt="Roman Empire">
-                        <p>Curso 1</p>
-                    </a>
-                </div>
-
-                <p><a href="resources/modules/courses/courses_catalog.html">Explora mas cursos aqui</a></p>
+    
+                <form id="registerForm" class="form">
+                    <h3>
+                        Unete de manera gratuita y conoce la historia de
+                        este maravilloso mundo.
+                    </h3>
+                    <label for="username_field">Nombre de usuario</label><br>
+                    <input type="text" id="username_field" name="username_field" required><br>
+                    <label for="email_field">Correo electrónico</label><br>
+                    <input type="email" id="email_field" name="email_field" required><br>
+                    <label for="password_field">Contraseña</label><br>
+                    <input type="password" id="password_field" name="password_field" required><br>
+    
+                    <button type="submit">Crear cuenta</button>
+                    <p>
+                        ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a>
+                    </p>
+                </form>
             </div>
-        </div>
+    
+            <div class="block row-block">
+                <div class="categoriesPanel">
+                    <h2>Algunas de nuestras categorías</h2>
+                    <ul>
+                        <li><a href="resources/modules/guest_mode/courses/courses_catalog.html">Edad Antigua</a></li>
+                        <li><a href="resources/modules/guest_mode/courses/courses_catalog.html">Edad Media</a></li>
+                        <li><a href="resources/modules/guest_mode/courses/courses_catalog.html">Edad Moderna</a></li>
+                        <li><a href="resources/modules/guest_mode/courses/courses_catalog.html">Edad Contemporánea</a></li>
+                    </ul>
+                </div>
+                <div class="coursesPanel" id="coursesPanel">
+                    <h2>Explora nuestros cursos: </h2>
+                    <div class="courseHomeComponent">
+                        <a class="stylish_link">
+                            <img src="resources/static/roman_empire.jpg" alt="Roman Empire">
+                            <p>Curso 1</p>
+                        </a>
+                    </div>
+                    <div class="courseHomeComponent">
+                        <a class="stylish_link">
+                            <img src="resources/static/roman_empire.jpg" alt="Roman Empire">
+                            <p>Curso 1</p>
+                        </a>
+                    </div>
+                    <div class="courseHomeComponent">
+                        <a class="stylish_link">
+                            <img src="resources/static/roman_empire.jpg" alt="Roman Empire">
+                            <p>Curso 1</p>
+                        </a>
+                    </div>
+    
+                    <p><a href="resources/modules/guest_mode/courses/courses_catalog.html">Explora mas cursos aqui</a></p>
+                </div>
+            </div>
+        </section>
     </body>
 
 </html>

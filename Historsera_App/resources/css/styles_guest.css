@@ -2,6 +2,10 @@
 /*MOBILES FIRST*/
 body{
     background-color: #9D9B91;
+    background-image: url("../static/bg.jpg");
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: row;
 }
 
 button{
@@ -29,6 +33,7 @@ input[type="text"], input[type="password"], input[type="email"]{
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     background-color: black;
     display: flex;
@@ -38,11 +43,9 @@ input[type="text"], input[type="password"], input[type="email"]{
 
 
 .navbar a{
-    padding: 20px;
+    padding: 10px;
     text-decoration: none;
-    background-position-x: left;
     color: white;
-    margin: 5px;
 }
 
 .superContainer{
@@ -54,7 +57,7 @@ input[type="text"], input[type="password"], input[type="email"]{
 .block{
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    padding: 30px;
     margin-top: 30px;
 }
 
@@ -72,9 +75,6 @@ input[type="text"], input[type="password"], input[type="email"]{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.block > *{
-}
-
 /* Home */
 .form > *{
     margin: 5px;
@@ -82,6 +82,7 @@ input[type="text"], input[type="password"], input[type="email"]{
 }
 
 .form#registerForm{
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     padding-left: 20px;
@@ -102,6 +103,8 @@ input[type="text"], input[type="password"], input[type="email"]{
 }
 
 #welcomeMessagePanel h1{
+    font-size: 30px;
+    color: goldenrod;
     font-style: italic;
     text-align: center;
     transition: transform 1000ms, opacity 14ms;
@@ -123,10 +126,13 @@ input[type="text"], input[type="password"], input[type="email"]{
     flex-direction: column;
     background-color: #B4B1A8;
     font-size: 30px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .categoriesPanel > h2{
     text-align: center;
+    font-size: 30px;
 }
 
 .categoriesPanel ul{
@@ -142,6 +148,8 @@ input[type="text"], input[type="password"], input[type="email"]{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .categoriesPanel li a{
@@ -150,33 +158,38 @@ input[type="text"], input[type="password"], input[type="email"]{
 }
 
 .coursesPanel{
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
     background-color: #B4B1A8;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
 
 .courseHomeComponent{
-    background-color: white;
-    display: flex;
-    max-height: 150px;
+    max-width: 95%;
 }
 
 .courseHomeComponent a{
     display: flex;
-    text-align: center;
-    min-width: 100%;
-    padding: 10px;
+    background-color: white;
+    max-width: 100%;
 }
 
 .courseHomeComponent img{
-    max-width: 50%;
+    max-width: 40%;
+    max-height: 40%;
+    margin: 5px;
 }
 
-.courseHomeComponent  p{
-    margin: 0 auto;
+.courseHomeComponent a p {
+    word-wrap: break-word;
+    word-break: break-word;
+    margin: 10px 0 0 0;
+    width: 100%;
 }
-
 /* end of Home */
 
 /*Catalog*/
@@ -187,7 +200,14 @@ input[type="text"], input[type="password"], input[type="email"]{
     margin-top: 60px;
 }
 
+.search form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .search > .titleLabel{
+    color: white;
     font-size: 30px;
     font-style: italic;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -203,27 +223,27 @@ input[type="text"], input[type="password"], input[type="email"]{
 .courseComponent{
     background-color: white;
     padding: 10px;
-    max-width: 40%;
-    height: 220px;
+    max-width: 100%;
+    max-height: 200px;
     border-radius: 10px;
+    margin: 10px;
 }
 
 .courseComponent a{
     display: flex;
+    font-size: 20px;
     padding: 10px;
-    min-width: 30%;
-    max-height:200px;
+    max-height: 90%;
     overflow: hidden;
 }
 
 .courseComponent a:hover{
-    font-size: 20px;
+    font-size: 25px;
     overflow: auto;
 }
 
 .courseComponent img{
-    width: 150px;
-    height: 200px;
+    max-width: 40%;
 }
 
 .courseComponent .textDivisor{
@@ -243,12 +263,13 @@ input[type="text"], input[type="password"], input[type="email"]{
 
 .courseHeader{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding: 20px;
-    margin: 30px;
-    margin-top: 60px;
+    align-items: center;
+    margin-top: 20px;
     background-color: white;
     border-radius: 10px;
+    margin-top: 40px;
 }
 
 .courseHeader .textDivisor{
@@ -257,27 +278,27 @@ input[type="text"], input[type="password"], input[type="email"]{
 }
 
 .courseHeader .textDivisor p{
-    font-size: 1vw;
-    padding: 10px;
+    font-size: 18px;
 }
 
 .courseHeader img{
     margin: 10px;
-    width: 500px;
-    height: 300px;
+    width: 90%;
+    height: 200px;
 }
 
 .lecturesPanel{
-    padding: 20px;
+    margin: 0px;
     justify-content: space-between;
 }
 
 .lecturesPanel .lectureItem{
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    margin-bottom: 10px;
     background-color: white;
     border-radius: 10px;
+    width: 100%;
 }
 
 .lectureItem .stylish_link{
@@ -288,7 +309,7 @@ input[type="text"], input[type="password"], input[type="email"]{
 }
 
 .lectureItem h3{
-    margin: 20px;
+    margin: 10px;
 }
 
 .lectureItem .stylish_link:hover{
@@ -296,4 +317,60 @@ input[type="text"], input[type="password"], input[type="email"]{
     color: rgb(255, 252, 68);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
+}
+
+
+/*LOGIN*/
+.superContainer.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.loginForm{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.loginButton{
+    font-size: 25px;
+    width: 90%;
+}
+
+/*MEDIA QUERIES*/
+
+/*TABLETS*/
+
+@media screen and (min-width: 768px){
+
+    /*index*/
+    .block{
+        display: flex;
+        flex-direction: row;
+    }
+
+    /*categories-panel y courses_panel*/
+    .row-block{
+        justify-content: space-around;
+    }
+
+    .row-block > *{
+        max-width: 50%;
+    }
+
+    /*courses_catalog*/
+    .coursesGroup{
+        flex-direction: row;
+    }
+    .courseComponent{
+        max-width: 40%;
+    }
+
 }

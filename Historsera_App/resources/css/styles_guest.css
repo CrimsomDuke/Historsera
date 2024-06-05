@@ -12,7 +12,7 @@ button{
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     font-style: italic;
-    background-color: grey;
+    background-color: #808080;
     border-radius: 10%;
 }
 
@@ -124,10 +124,11 @@ input[type="text"], input[type="password"], input[type="email"]{
 .categoriesPanel{
     display: flex;
     flex-direction: column;
-    background-color: #B4B1A8;
+    background-color: rgba(180, 177, 168, 0.7);
     font-size: 30px;
     border-radius: 10px;
     margin-bottom: 10px;
+    padding: 20px;
 }
 
 .categoriesPanel > h2{
@@ -160,7 +161,7 @@ input[type="text"], input[type="password"], input[type="email"]{
 .coursesPanel{
     display: flex;
     flex-direction: column;
-    background-color: #B4B1A8;
+    background-color: rgba(180, 177, 168, 0.7);;
     text-align: center;
     font-size: 20px;
     align-items: center;
@@ -292,6 +293,11 @@ input[type="text"], input[type="password"], input[type="email"]{
     justify-content: space-between;
 }
 
+.lecturesPanel h1{
+    text-align: center;
+    color: black;
+}
+
 .lecturesPanel .lectureItem{
     display: flex;
     justify-content: space-between;
@@ -356,6 +362,10 @@ input[type="text"], input[type="password"], input[type="email"]{
         flex-direction: row;
     }
 
+    #registerBlock > *{
+        max-width: 40%;
+    }
+
     /*categories-panel y courses_panel*/
     .row-block{
         justify-content: space-around;
@@ -373,4 +383,50 @@ input[type="text"], input[type="password"], input[type="email"]{
         max-width: 40%;
     }
 
+    /*Course*/
+    .courseHeader{
+        flex-direction: row;
+    }
+
+    .loginForm{
+        font-size: 120%;
+    }
+
 }
+
+/*DESKTOP*/
+
+@media screen and (min-width: 968px){
+    body > *{
+        font-size: 120%;
+    }
+    .superContainer{
+        max-width: 80%;
+    }
+
+    .categoriesPanel{
+        justify-content: center;
+    }
+
+    .courseHomeComponent{
+        max-height: 30%;
+    }
+
+    /*courses_catalog*/
+    .coursesGroup{
+        flex-direction: row;
+        justify-content: left;
+    }
+    .courseComponent{
+        max-width: 30%;
+    }
+
+    .courseHeader{
+        font-size: 120%;
+    }
+
+    .courseHeader img{
+        height: 300px;
+    }
+}
+

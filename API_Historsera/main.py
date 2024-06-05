@@ -1,10 +1,11 @@
 import os
 
-from flask import Flask, jsonify, request
+from flask import jsonify, request
 from flask_cors import CORS
-from app.config import DevelopmentConfig
 from app import create_app
 from app.models import db
+
+import datetime
 
 app = create_app()
 db.init_app(app);
@@ -39,9 +40,24 @@ def upload_file():
         return jsonify({'error': 'No selected file'}), 400
 
     if file:
-        filename = file.filename
-        file.save(os.path.join(app.config['IMAGES_FOLDER'], filename))
-        return jsonify({'success': 'File successfully uploaded'}), 200
+        #get the extension of the file and create a new filename, the extension is the last 4 characters of the filenameç
+        components = file.filename.split('.')
+
+        extension = components[len(components) - 1];
+
+        if(extension in ['jpg', 'jpeg', 'png']):
+            #get the daate in format yyyy-mm-dd-hh-mm-ss
+            filename = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S") + '.' + extension;
+
+            file.save(os.path.join(app.config['IMAGES_FOLDER'], filename))
+            return jsonify({'success': 'File successfully uploaded'}), 200
+        if(extension == 'pdf'):
+            filename = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S") + '.' + extension;
+            file.save(os.path.join(app.config['PDFS_FOLDER'], filename))
+            return jsonify({'success': 'File successfully uploaded'}), 200
+
+        else:
+            return jsonify({'error': 'Invalid file extension'}), 400
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -362,7 +362,7 @@ input[type="text"], input[type="password"], input[type="email"]{
     }
 
     .row-block > *{
-        max-width: 50%;
+        max-width: 45%;
     }
 
     /*courses_catalog*/

@@ -1,0 +1,71 @@
+/*Category manager*/
+/*MOBILE FIRST*/
+.categories-view{
+    min-height: 80vh;
+}
+
+.category-creation-panel{
+    min-width: 100%;
+    background-color: white;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
+
+.category-creation-panel form{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.category-creation-panel form *{
+    box-sizing: border-box;
+    width: 100%;
+    height: 30px;
+    margin: 5px;
+}
+
+.category-creation-panel form > button{
+    background-color: #3786f5;
+    color: white;
+    border-width: 0px;
+}
+
+.categories-panel{
+    background-color: white;
+    width: 100%;
+    min-height: 70vh;
+}
+
+.category-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-style: solid;
+    font-family: 'Times New Roman', Times, serif;
+    border-width: 1px;
+    height: 5vh;
+}
+
+.category-item p{
+    text-decoration: none;
+    color: black;
+    width: 70%;
+    padding: 5px;
+}
+
+.category-item button{
+    padding: 10px;
+    margin: 5px;
+    background-color: rgb(255, 69, 69);
+    color: white;
+    border-radius: 10px;
+    border-style: none;
+    width: 30%;
+    max-width: 200px;
+    z-index: 2;
+}

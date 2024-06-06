@@ -1,0 +1,13 @@
+/*MOBILE FIRST*/
+/*courses_manager*/
+
+.create-course-button{
+    text-align: left;
+    align-self: start;
+    background-color: #1042FF;
+    color: white;
+    padding: 10px;
+    text-decoration-line: none;
+    font-size: 120%;
+    margin: 20px;
+}

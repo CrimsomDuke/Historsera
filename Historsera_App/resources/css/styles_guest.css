@@ -366,6 +366,11 @@ input[type="text"], input[type="password"], input[type="email"]{
         max-width: 40%;
     }
 
+    #registerBlock form h3{
+        font-size: 30px;
+        padding: 10px;
+    }
+
     /*categories-panel y courses_panel*/
     .row-block{
         justify-content: space-around;

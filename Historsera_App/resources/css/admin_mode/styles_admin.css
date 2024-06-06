@@ -1,0 +1,126 @@
+/*MOBILE FIRST*/
+
+body{
+    background-color: #6CAAFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.superContainer{
+    margin-top: 100px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.block{
+    display: flex;
+    flex-direction: column;
+}
+
+/* admin index */
+.welcomeMessage{
+    font-size: 120%;
+}
+
+.block .message{
+    text-align: center;
+    font-size: 20px;
+}
+
+.block .options, .block .categories-options{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.block .options{
+    justify-content: space-between;
+    min-height: 100%;
+}
+
+.block a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.block .categories-options{
+    margin-top: 20px;
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.categories-options > a{
+    background-color: wheat;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.options > a{
+    background-color: rgb(156, 104, 6);
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/*Category manager*/
+
+.categories-view{
+    min-height: 80vh;
+}
+
+.category-creation-panel{
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.category-creation-panel form{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.categories-panel{
+    background-color: white;
+    width: 100%;
+    min-height: 70vh;
+}
+
+.category-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-style: solid;
+    font-family: 'Times New Roman', Times, serif;
+    border-width: 1px;
+    height: 5vh;
+}
+
+.category-item a{
+    text-decoration: none;
+    color: black;
+    width: 70%;
+    padding: 5px;
+}
+
+.category-item button{
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    margin: 5px;
+    background-color: red;
+    border-radius: 10px;
+    border-style: none;
+    width: 30%;
+    z-index: 2;
+}

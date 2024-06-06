@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Historsera Admin</title>
+        <meta name="author" content="Sebastian Rengel">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../../css/admin_mode/admin-navbar.css">
+        <link rel="stylesheet" href="../../css/admin_mode/styles_admin.css">
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a href="admin_index.html">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#">Paneles</a>
+                    <ul>
+                        <li><a href="categories/categories_manager.html">Categorias</a></li>
+                        <li><a href="#courses_panel">Cursos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="superContainer">
+            <div class="welcomeMessage">
+                <h1>Bienvenido al modo Admin</h1>
+                <h2 id="username_label">username</h2>
+            </div>
+
+            <section class="block">
+                <div class="message">
+                    <p>
+                        El modo administrador te permite crear y manejarcategorías,
+                        cursos y lecciones y así expandirel contenido de Historsera.
+                        Selecciona una opcion para iniciar seguir creando
+                    </p>
+                </div>
+
+                <div class="options">
+                    <div class="categories-options">
+                        <a href="#categories_panel">Manejar Categorias</a>
+                        <a href="#courses_panel">Manejar Cursos</a>
+                    </div>
+                    <a href="../../../index.html">Volver al modo usuario</a>
+                </div>
+            </section>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+/*MOBILE FIRST*/
+
+/*navbar*/
+.navbar{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    max-width: fit-content;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.navbar *{
+    font-family: 'Times New Roman', Times, serif';
+}
+
+.navbar-list{
+    padding-left: 0;
+    display: flex;
+    min-width: 100%;
+    margin: 0px;
+    background-color: black;
+    list-style-type: none;
+}
+
+.navbar li a{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar li a:hover{
+    background-color: black;
+    color: rgb(255, 252, 68);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    border-style: solid;
+}
+
+.navbar-item{
+    margin: 0px;
+    padding: 10px;
+    border-color: white;
+    border-left-style: solid;
+    border-right-style: solid;
+
+}
+
+.navbar-item > ul{
+    display: none;
+}
+
+.navbar-item:hover > ul{
+    display: block;
+}
+

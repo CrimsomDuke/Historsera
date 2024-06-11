@@ -1,0 +1,94 @@
+
+
+.edit-course-view{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 90%;
+    align-items: center;
+}
+
+#course-form{
+    margin-top: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 90%;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+}
+
+#course-form > *{
+    width: 80%;
+    align-items: center;
+}
+
+#course-form textarea{
+    height: 200px;
+}
+
+
+.create-lecture-button{
+    text-align: left;
+    align-self: start;
+    background-color: #1042FF;
+    color: white;
+    padding: 10px;
+    text-decoration-line: none;
+    font-size: 120%;
+    margin: 20px;
+}
+
+.lectures-panel{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    min-height: 70vh;
+}
+
+.lectures-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    border-width: 3px;
+    border-style: solid;
+    border-color: grey;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.lectures-item > .lecture-info{
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.lectures-item > .lecture-modifiers{
+    display: flex;
+    gap: 10px;
+}
+
+.lectures-item > .lecture-modifiers > a{
+    box-sizing: border-box;
+    padding: 10px;
+    border-width: 0;
+    border-radius: 5px;
+    width: 100px;
+    font-size: 120%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.lecture-modifiers > .edit-lecture-button{
+    background-color: #18A2FF;
+    color: white;
+}
+
+.lecture-modifiers > .delete-lecture-button{
+    background-color: #BE4141;
+    color: white;
+}

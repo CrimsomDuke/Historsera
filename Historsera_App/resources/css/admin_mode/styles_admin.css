@@ -6,13 +6,24 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+/*button animation*/
+a, button{
+    transition: font-size 0.5s;
+}
+
+a:hover, button:hover{
+    cursor: pointer;
+    font-size: 150%;
+}
+
 .superContainer{
-    margin-top: 100px;
     width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .block{
@@ -36,11 +47,13 @@ body{
     text-align: center;
     justify-content: center;
     align-items: center;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .block .options{
     justify-content: space-between;
-    min-height: 100%;
+    min-height: 90%;
 }
 
 .block a{
@@ -62,6 +75,7 @@ body{
     padding: 10px;
     border-style: solid;
     border-width: 1px;
+    max-width: 400px;
 }
 
 .options > a{
@@ -71,4 +85,57 @@ body{
     padding: 10px;
     border-style: solid;
     border-width: 1px;
+    max-width: 400px;
 }
+
+/*Media queries en admin_indexs*/
+@media (min-width: 768px){
+
+    .welcomeMessage{
+        align-self: self-start;
+        text-align: left;
+        align-items: start;
+        font-size: 150%;
+    }
+
+    .message p{
+        font-size: 120%;
+    }
+
+    .block{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .block .message{
+        width: 50%;
+    }
+
+    .block .options{
+        width: 50%;
+    }
+
+}
+@media screen and (min-width: 1024px){
+    .welcomeMessage{
+        align-self: self-start;
+        text-align: left;
+        align-items: start;
+        font-size: 170%;
+    }
+    .message p{
+        font-size: 150%;
+    }
+
+    .welcomeMessage{
+        align-self: self-start;
+        text-align: left;
+        align-items: start;
+        font-size: 150%;
+    }
+
+    .message p{
+        font-size: 120%;
+    }
+}
+

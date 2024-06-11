@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Editar Curso</title>
+        <meta name="author" content="Sebastian Rengel Claros">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../../../css/admin_mode/styles_admin.css">
+        <link rel="stylesheet" href="../../../css/admin_mode/admin-navbar.css">
+        <link rel="stylesheet" href="../../../css/admin_mode/courses_styles/edit_course.css">
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a href="admin_index.html">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#">Paneles</a>
+                    <ul>
+                        <li><a href="../categories/categories_manager.html">Categorias</a></li>
+                        <li><a href="../courses/courses_manager.html">Cursos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="superContainer edit-course-view">
+            <form id="course-form">
+                <input type="text" name="course-name" placeholder="Nombre del curso" id="course_name">
+                <input type="text" name="course-author" placeholder="Autor del curso" id="course_author">
+                <textarea name="course-description" placeholder="Descripcion del curso" id="course_desc">
+                </textarea>
+                <input type="file" name="course-image" placeholder="Image de referencia" id="course_image">
+                <input type="hidden" id="courseIdHiddenField">
+
+                <label for="category_field">Categoria: </label>
+                <select name="category_field" id="category_field">
+                    <option value="1">Historia</option>
+                    <option value="2">Matematicas</option>
+                </select>
+
+                <div class="button-group">
+                    <button id="save_course_button">
+                        Crear Curso
+                    </button>
+                    <button id="cancel-button">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+
+            <section class="lectures-panel">
+                <div class="lectures-item">
+                    <div class="lecture-info">
+                        <p>ID</p>
+                        <p>El imperio Romano</p>
+                    </div>
+                    <div class="lecture-modifiers">
+                        <a class="edit-lecture-button">Editar</a>
+                        <a class="delete-lecture-button">Eliminar</a>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </body>
+</html>

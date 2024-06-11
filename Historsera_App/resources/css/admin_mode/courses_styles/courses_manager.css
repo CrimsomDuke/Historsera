@@ -1,6 +1,14 @@
 /*MOBILE FIRST*/
 /*courses_manager*/
 
+.courses-view{
+    width: 90%;
+}
+
+.course-view > h1{
+    font-weight: normal;
+}
+
 .create-course-button{
     text-align: left;
     align-self: start;
@@ -10,4 +18,96 @@
     text-decoration-line: none;
     font-size: 120%;
     margin: 20px;
+}
+
+.courses-panel{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    min-height: 70vh;
+}
+
+.courses-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    border-width: 3px;
+    border-style: solid;
+    border-color: grey;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.courses-item > .course-info{
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.courses-item > .course-modifiers{
+    display: flex;
+    gap: 10px;
+}
+
+.courses-item > .course-modifiers > a{
+    box-sizing: border-box;
+    padding: 10px;
+    border-width: 0;
+    border-radius: 5px;
+    width: 100px;
+    font-size: 120%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.course-modifiers > .edit-course-button{
+    background-color: #18A2FF;
+    color: white;
+}
+
+.course-modifiers > .delete-course-button{
+    background-color: #BE4141;
+    color: white;
+}
+
+/*Table*/
+@media screen and (min-width: 768px){
+
+    .courses-view > h1{
+        align-self: self-start;
+    }
+
+    .courses-item{
+        flex-direction: row;
+    }
+
+    .courses-item > .course-modifiers{
+        flex-direction: row;
+    }
+
+    .courses-item > .course-info{
+        font-size: 110%;
+    }
+
+    .courses-item > .course-modifiers > button{
+        font-size: 110%;
+        width: 100px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .courses-view{
+        max-width: 70%;
+    }
+
+    .courses-item > .course-info{
+        font-size: 120%;
+    }
+
+    .courses-item > .course-modifiers > button{
+        font-size: 120%;
+    }
 }

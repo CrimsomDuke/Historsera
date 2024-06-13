@@ -5,13 +5,14 @@
         <meta name="author" content="Sebastian Rengel Claros">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="../../css/user_mode/styles_user.css">
-        <link rel="stylesheet" href="../../css/user_mode/user-navbar.css">
+        <link rel="stylesheet" href="../../../css/user_mode/user-navbar.css">
+        <link rel="stylesheet" href="../../../css/user_mode/styles_user.css">
+        <link rel="stylesheet" href="../../../css/user_mode/courses_styles/courses-catalog.css">
     </head>
     <body>
         <nav class="navbar">
             <div class="user_home">
-                <a href="user_home.html">Home</a>
+                <a href="../user_home.html">Home</a>
                 <a href="courses/courses_catalog.html">Catalogo</a>
             </div>
             <div>
@@ -19,18 +20,20 @@
             </div>
         </nav>
 
-        <section class="superContainer">
 
-            <div class="welcome-message">
-                <h1>Bienvenido <span id="username-label">Username</span></h1>
-                <p>Sigue aprendiendo sobre nuestro mundo</p>
+        <div class="superContainer">
+            <div class="block search">
+                <h2 class="titleLabel">Explora los cursos de Historsera</h2>
+                <form id="searchForm" class="form">
+                    <input type="text" id="search_field" name="search_field" placeholder="Buscar cursos...">
+                    <button type="submit">Buscar</button>
+                </form>
             </div>
 
-            <h3 class="my-courses-label">Mis cursos:</h3>
             <section class="block coursesGroup">
                 <div class="courseComponent">
                     <a class="stylish_link" href="course.html">
-                        <img src="../../static/roman_empire.jpg" alt="Curso 1">
+                        <img src="../../../static/roman_empire.jpg" alt="Curso 1">
                         <div class="textDivisor">
                             <h4>Nombre del curso</h4>
                             <p>
@@ -47,7 +50,7 @@
 
                 <div class="courseComponent">
                     <a class="stylish_link" href="course.html">
-                        <img src="../../static/roman_empire.jpg" alt="Curso 1">
+                        <img src="../../../static/roman_empire.jpg" alt="Curso 1">
                         <div class="textDivisor">
                             <h4>Nombre del curso</h4>
                             <p>
@@ -61,7 +64,7 @@
 
                 <div class="courseComponent">
                     <a class="stylish_link" href="course.html">
-                        <img src="../../static/roman_empire.jpg" alt="Curso 1">
+                        <img src="../../../static/roman_empire.jpg" alt="Curso 1">
                         <div class="textDivisor">
                             <h4>Nombre del curso</h4>
                             <p>
@@ -75,7 +78,7 @@
 
                 <div class="courseComponent">
                     <a class="stylish_link" href="course.html">
-                        <img src="../../static/roman_empire.jpg" alt="Curso 1">
+                        <img src="../../../static/roman_empire.jpg" alt="Curso 1">
                         <div class="textDivisor">
                             <h4>Nombre del curso</h4>
                             <p>
@@ -88,7 +91,7 @@
                 </div>
 
             </section>
-        </section>
+        </div>
         
 
     </body>

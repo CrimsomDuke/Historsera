@@ -1,0 +1,37 @@
+/*Gran parte del styling ya está hecho en el css styles_user.css*/
+/*Catalog*/
+
+.search{
+    justify-content: right;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.search form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search > .titleLabel{
+    color: white;
+    font-size: 30px;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.search .searchForm{
+    box-sizing: border-box;
+}
+
+/*tablets*/
+@media screen and (min-width: 768px){
+
+    .superContainer{
+        margin-top: 5%;
+    }
+
+    .search{
+        flex-direction: row;
+    }
+}

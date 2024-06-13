@@ -3,7 +3,30 @@ body{
     background-image: url("../../static/bg.jpg");
     background-repeat: repeat;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+}
+/*Estilo por defecto de algunos elementos*/
+button{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-style: italic;
+    background-color: #808080;
+    border-radius: 10%;
+}
+
+button:hover{
+    background-color: black;
+    color: yellow;
+    border-radius: 10px;
+}
+
+input[type="text"], input[type="password"], input[type="email"]{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-style: italic;
+    padding: 5px;
 }
 
 /*mobile first*/
@@ -11,11 +34,36 @@ body{
 .superContainer{
     display: flex;
     flex-direction: column;
-    margin-top: 30%;
+}
+
+.welcome-message{
+    display: flex;
+    flex-direction: column;
+    color: goldenrod;
+    font-size: 140%;
+}
+
+.welcome-message h1:hover span{
+    color: yellow;
+    font-size: 180%;
 }
 
 
+.my-courses-label{
+    display: flex;
+    color: wheat;
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+/*Todos los forms*/
+.form > *{
+    margin: 5px;
+    font-size: 20px;
+}
+
 /*user_home: mis cursos*/
+/*Dado que reutilizaré las mismas clases en la vista de catalogo, cargando este archivo gran parte del trabajo
+estará hecho**/
 .block{
     display: flex;
     flex-direction: column;
@@ -36,7 +84,6 @@ body{
     font-style: italic;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
 .coursesGroup{
     display: flex;
     flex-wrap: wrap;
@@ -83,3 +130,21 @@ body{
     padding: 10px;
 }
 
+/*Tablets*/
+@media screen and (min-width: 768px) {
+    .superContainer{
+        margin-top: 10%;
+    }
+    .coursesGroup{
+        flex-direction: row;
+    }
+    .courseComponent{
+        max-width: 40%;
+    }
+}
+/*deskto*/
+@media screen {
+    .superContainer{
+        max-width: 80%;
+    }
+}

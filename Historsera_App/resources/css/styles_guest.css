@@ -171,12 +171,14 @@ input[type="text"], input[type="password"], input[type="email"]{
 
 .courseHomeComponent{
     max-width: 95%;
+    max-height: 10vh;
 }
 
 .courseHomeComponent a{
     display: flex;
     background-color: white;
     max-width: 100%;
+    align-items: center;
 }
 
 .courseHomeComponent img{
@@ -238,6 +240,14 @@ input[type="text"], input[type="password"], input[type="email"]{
     overflow: hidden;
 }
 
+.courseComponent .textDivisor p{
+    display: none;
+}
+
+.courseComponent:hover .textDivisor p{
+    display: block;
+}
+
 .courseComponent a:hover{
     font-size: 25px;
     overflow: auto;
@@ -268,7 +278,7 @@ input[type="text"], input[type="password"], input[type="email"]{
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-    background-color: white;
+    background-color: wheat;
     border-radius: 10px;
     margin-top: 40px;
 }
@@ -342,7 +352,9 @@ input[type="text"], input[type="password"], input[type="email"]{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 10px;
     box-sizing: border-box;
+    min-height: 600px;;
 }
 
 .loginButton{
@@ -401,7 +413,7 @@ input[type="text"], input[type="password"], input[type="email"]{
 
 /*DESKTOP*/
 
-@media screen and (min-width: 968px){
+@media screen and (min-width: 1024px){
     body > *{
         font-size: 120%;
     }
@@ -420,10 +432,10 @@ input[type="text"], input[type="password"], input[type="email"]{
     /*courses_catalog*/
     .coursesGroup{
         flex-direction: row;
-        justify-content: left;
+        justify-content: center;
     }
     .courseComponent{
-        max-width: 30%;
+        max-width: 40%;
     }
 
     .courseHeader{

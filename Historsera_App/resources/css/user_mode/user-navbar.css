@@ -1,0 +1,22 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    border-style: solid;
+    justify-content: space-between;
+}
+
+.navbar div{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.navbar a{
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}

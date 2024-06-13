@@ -1,0 +1,85 @@
+body{
+    background-color: #9D9B91;
+    background-image: url("../../static/bg.jpg");
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: row;
+}
+
+/*mobile first*/
+
+.superContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30%;
+}
+
+
+/*user_home: mis cursos*/
+.block{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.block a:visited, .block a:link, .block a:active{
+    color: black;
+    text-decoration: none;
+}
+
+.block a:hover, .navbar a:hover{
+    color: rgb(255, 252, 68);
+    background-color: black;
+    border-radius: 10px;
+    font-size: 120%;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.coursesGroup{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.courseComponent{
+    background-color: white;
+    padding: 10px;
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.courseComponent a{
+    display: flex;
+    font-size: 20px;
+    padding: 10px;
+    max-height: 90%;
+    overflow: hidden;
+}
+
+.courseComponent .textDivisor p{
+    display: none;
+}
+
+.courseComponent:hover .textDivisor p{
+    display: block;
+}
+
+.courseComponent a:hover{
+    font-size: 25px;
+    overflow: auto;
+}
+
+.courseComponent img{
+    max-width: 40%;
+}
+
+.courseComponent .textDivisor{
+    justify-content: center;
+    padding: 10px;
+}
+

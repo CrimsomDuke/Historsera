@@ -1,0 +1,84 @@
+.superContainer{
+    justify-content: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.courseHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    background-color: wheat;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.courseHeader .textDivisor{
+    padding: 10px;
+    justify-content: center;
+}
+
+.courseHeader .textDivisor p{
+    font-size: 18px;
+}
+
+.courseHeader img{
+    margin: 10px;
+    width: 90%;
+    max-height: 300px;
+}
+
+.control-section{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.control-section *{
+    margin: 10px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.control-section #join-button{
+    
+}
+
+.lecturesPanel{
+    margin: 0px;
+    justify-content: space-between;
+}
+
+.lecturesPanel h1{
+    text-align: center;
+    color: black;
+}
+
+.lecturesPanel .lectureItem{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.lectureItem .stylish_link{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.lectureItem h3{
+    margin: 10px;
+}
+
+.lectureItem .stylish_link:hover{
+    background-color: black;
+    color: rgb(255, 252, 68);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}

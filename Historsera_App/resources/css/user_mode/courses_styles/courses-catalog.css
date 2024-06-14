@@ -1,6 +1,10 @@
 /*Gran parte del styling ya está hecho en el css styles_user.css*/
 /*Catalog*/
 
+.superContainer{
+    max-width: 90%;
+}
+
 .search{
     justify-content: right;
     padding: 20px;

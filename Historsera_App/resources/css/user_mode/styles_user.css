@@ -92,6 +92,7 @@ estará hecho**/
 }
 
 .courseComponent{
+    display: flex;
     background-color: white;
     padding: 10px;
     max-width: 100%;

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Leccion</title>
+        <meta name="author" content="Sebastian Rengel Claros">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../../../css/user_mode/styles_user.css">
+        <link rel="stylesheet" href="../../../css/user_mode/user-navbar.css">
+        <link rel="stylesheet" href="../../../css/user_mode/lectures_styles/lecture.css">
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <div class="user_home">
+                <a href="../user_home.html">Home</a>
+                <a href="../courses/courses_catalog.html">Catalogo</a>
+            </div>
+            <div>
+                <a href="user_profile.html">Perfil</a>
+            </div>
+        </nav>
+        <section class="superContainer lecture-view">
+            <!--YT Video player-->
+            <div class="video-container">
+                <iframe id="video-player" 
+                    width="100%" height="500px" src="https://www.youtube.com/embed/7lCDEYXw3mM" 
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+                <div class="button-group">
+                    <button id="previous-button">
+                        Anterior
+                    </button>
+                    <button id="next-button">
+                        Siguiente
+                    </button>
+                </div>
+            </div>
+
+            <section class="description-section">
+                <header class="title-section">
+                    <h1 id="title-field">Nombre de la leccion</h1>
+                </header>
+                <p id="description-field">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptas provident qui 
+                    reiciendis quibusdam dignissimos totam consequuntur, 
+                    sequi cumque doloribus consectetur voluptatibus sed, porro numquam quos soluta, aperiam nemo unde!
+                </p>
+            </section>
+
+            <section class="aditional-files"><!--PDF-->
+                <iframe id="pdf-viewer"
+                    src="https://www.bing.com/ck/a?!&&p=46280b295eccd874JmltdHM9MTcxODMyMzIwMCZpZ3VpZD0zYTIxZGU4Yy05YjQ2LTYzMWItMmJiZi1jZjk5OWY0NjZkMTAmaW5zaWQ9NTE5OA&ptn=3&ver=2&hsh=3&fclid=3a21de8c-9b46-631b-2bbf-cf999f466d10&psq=test+pdf+&u=a1aHR0cHM6Ly9zMS5xNGNkbi5jb20vODA2MDkzNDA2L2ZpbGVzL2RvY19kb3dubG9hZHMvdGVzdC5wZGY&ntb=1"
+                    width="100%" height="600px" aria-disabled="true">
+                </iframe>
+            </section>
+        </section>
+    </body>
+</html>

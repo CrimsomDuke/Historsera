@@ -10,7 +10,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-    background-color: wheat;
+    background-color: rgba(245, 222, 179, 0.7);
     border-radius: 10px;
     margin-top: 40px;
 }
@@ -22,12 +22,13 @@
 
 .courseHeader .textDivisor p{
     font-size: 18px;
+    padding-right: 10px;
 }
 
 .courseHeader img{
     margin: 10px;
     width: 90%;
-    max-height: 300px;
+    max-height: 250px;
 }
 
 .control-section{
@@ -43,7 +44,19 @@
 }
 
 .control-section #join-button{
-    
+    background-color: rgb(99, 153, 233);
+    color: whitesmoke;
+}
+
+.control-section #join-button:hover{
+    background-color: rgb(68, 68, 192);
+    color: white;
+    font-size: 140%;
+}
+
+.control-section #progress-bar{
+    accent-color: rgb(99, 153, 233);
+    font-style: normal
 }
 
 .lecturesPanel{
@@ -53,7 +66,8 @@
 
 .lecturesPanel h1{
     text-align: center;
-    color: black;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .lecturesPanel .lectureItem{
@@ -63,6 +77,8 @@
     background-color: white;
     border-radius: 10px;
     width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
 .lectureItem .stylish_link{
@@ -81,4 +97,41 @@
     color: rgb(255, 252, 68);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
+}
+
+/*Tables*/
+@media screen and (min-width: 768px) {
+
+    .superContainer{
+        max-width: 80%;
+    }
+
+    .courseHeader{
+        flex-direction: row;
+    }
+
+    .lectureItem{
+        font-size: 130%;
+    }
+}
+
+/*desktiopo*/
+@media screen and (min-width: 1024px) {
+
+    .superContainer{
+        max-width: 70%;
+    }
+
+    .courseHeader{
+        flex-direction: row;
+    }
+
+    .courseHeader img{
+        max-height: 300px;
+        padding: 10px;
+    }
+
+    .lectureItem{
+        font-size: 150%;
+    }
 }

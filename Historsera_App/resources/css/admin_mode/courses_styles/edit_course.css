@@ -21,11 +21,33 @@
 
 #course-form > *{
     width: 80%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 120%;
     align-items: center;
 }
 
 #course-form textarea{
     height: 200px;
+}
+
+.button-group{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.button-group > button{
+    padding: 10px;
+    font-size: 120%;
+    border-width: 0;
+    border-radius: 5px;
+    background-color: #1042FF;
+    color: white;
+}
+
+#cancel-button{
+    background-color: #BE4141;
 }
 
 

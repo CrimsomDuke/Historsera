@@ -117,6 +117,11 @@ a:hover, button:hover{
 
 }
 @media screen and (min-width: 1024px){
+
+    .superContainer{
+        width: 70%;
+    }
+
     .welcomeMessage{
         align-self: self-start;
         text-align: left;
@@ -131,11 +136,18 @@ a:hover, button:hover{
         align-self: self-start;
         text-align: left;
         align-items: start;
-        font-size: 150%;
+        font-size: 170%;
     }
 
     .message p{
-        font-size: 120%;
+        font-size: 150%;
     }
+
+    .options  a{
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 230%;
+    }
+
 }
 

@@ -1,0 +1,69 @@
+
+.profile-view{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.message{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color:rgba(255, 255, 255, 0.8);
+    color: black;
+    font-size: 140%;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.user-info-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.user-info-panel h1{
+    font-size: 150%;
+    text-align: left;
+}
+
+.user-info-panel span{
+    margin-left: 20px;    
+}
+
+.button-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    margin: 20px;
+}
+
+.button-group button{
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-style: normal;
+    font-size: 20px;
+}
+
+#log-out-button{
+    background-color: brown;
+}
+
+#admin-mode-button{
+    background-color: rgb(4, 118, 170);
+}

@@ -36,6 +36,10 @@
     box-sizing: border-box;
 }
 
+.courseItem{
+    max-width: 100%;
+}
+
 /*tablets*/
 @media screen and (min-width: 768px){
 

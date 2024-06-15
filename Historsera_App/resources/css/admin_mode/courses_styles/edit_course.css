@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 90%;
+    width: 95%;
     align-items: center;
     background-color: white;
     padding: 20px;
@@ -44,6 +44,7 @@
     border-radius: 5px;
     background-color: #1042FF;
     color: white;
+    box-sizing: border-box;
 }
 
 #cancel-button{
@@ -87,6 +88,7 @@
     align-items: center;
     display: flex;
     gap: 10px;
+    font-size: 120%;
 }
 
 .lectures-item > .lecture-modifiers{
@@ -113,4 +115,47 @@
 .lecture-modifiers > .delete-lecture-button{
     background-color: #BE4141;
     color: white;
+}
+
+.create-lecture-panel{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 30px;
+}
+
+.create-lecture-panel h1{
+    text-align: left;
+}
+
+#create-lecture-button{
+    background-color: #1042FF;
+    border-width: 0;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    text-decoration-line: none;
+    text-align: center;
+    font-size: 120%;
+    width: 40%;
+    max-width: 200px;
+}
+
+/*Media Queries*/
+@media screen and (min-width: 768px){
+
+    .edit-course-view{
+        max-width: 80%;
+    }
+
+    .lectures-item{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .edit-course-view{
+        max-width: 60%;;
+    }
 }

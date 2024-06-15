@@ -1,6 +1,7 @@
 /*Category manager*/
 /*MOBILE FIRST*/
 .categories-view{
+    margin-top: 50px;
     min-height: 80vh;
 }
 

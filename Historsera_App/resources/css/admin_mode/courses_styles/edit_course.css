@@ -9,7 +9,6 @@
 }
 
 #course-form{
-    margin-top: 500px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -17,6 +16,8 @@
     align-items: center;
     background-color: white;
     padding: 20px;
+    /*Evitar que el navbar se coma el formulario*/
+    margin-top: 80vh;
 }
 
 #course-form > *{
@@ -26,8 +27,8 @@
     align-items: center;
 }
 
-#course-form textarea{
-    height: 200px;
+#course-form #course_description{
+    height: 300px;
 }
 
 .button-group{
@@ -52,7 +53,7 @@
 }
 
 
-.create-lecture-button{
+#create-lecture-button{
     text-align: left;
     align-self: start;
     background-color: #1042FF;
@@ -157,5 +158,13 @@
 @media screen and (min-width: 1024px){
     .edit-course-view{
         max-width: 60%;;
+    }
+
+    #course-form{
+        font-size: 130%;
+    }
+
+    #course-description{
+        font-size: 130%;
     }
 }

@@ -12,6 +12,7 @@
     box-sizing: border-box;
     padding: 10px;
     text-align: center;
+    border-radius: 10px;
 }
 
 .category-creation-panel form{
@@ -28,18 +29,18 @@
     width: 100%;
     height: 30px;
     margin: 5px;
+    max-width: 300px;
+    border-radius: 5px;
 }
 
 .category-creation-panel form > label{
-    font-size: 20px;
-
+    font-size: 25px;
 }
 
 .category-creation-panel form > button{
     background-color: #3786f5;
     color: white;
     border-width: 0px;
-    max-width: 300px;
 }
 
 .categories-panel{
@@ -93,6 +94,11 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+    }
+
+    .category-creation-panel form *{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 120%;
     }
 }
 

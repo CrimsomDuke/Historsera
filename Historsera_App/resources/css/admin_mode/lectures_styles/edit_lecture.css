@@ -1,0 +1,89 @@
+.edit-lecture-view{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 90%;
+    align-items: center;
+}
+
+#lecture-form{
+    /*Aqui ya no es necesario el margin-top porque no hay mucho contenido en la paigna*/
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 95%;
+    align-items: center;
+    justify-items: center;
+    background-color: white;
+    padding: 20px;
+}
+
+#lecture-form > *{
+    width: 80%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 120%;
+    align-items: center;
+}
+
+#lecture-form #lecture_description{
+    height: 300px;
+}
+
+.button-group{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.button-group > button{
+    padding: 10px;
+    font-size: 120%;
+    border-width: 0;
+    border-radius: 5px;
+    background-color: #1042FF;
+    color: white;
+    box-sizing: border-box;
+}
+
+#cancel-button{
+    background-color: #BE4141;
+}
+
+.create-lecture-button{
+    text-align: left;
+    align-self: start;
+    background-color: #1042FF;
+    color: white;
+    padding: 10px;
+    text-decoration-line: none;
+    font-size: 120%;
+    margin: 20px;
+}
+
+/*Media Queries*/
+@media screen and (min-width: 768px){
+
+    .edit-lecture-view{
+        max-width: 80%;
+    }
+
+    .lectures-item{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .edit-lecture-view{
+        max-width: 60%;;
+    }
+
+    #lecture-form{
+        font-size: 130%;
+    }
+
+    #lecture-description{
+        font-size: 130%;
+    }
+}

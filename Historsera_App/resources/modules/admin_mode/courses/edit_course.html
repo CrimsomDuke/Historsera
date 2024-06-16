@@ -14,7 +14,7 @@
         <nav class="navbar">
             <ul class="navbar-list">
                 <li class="navbar-item">
-                    <a href="admin_index.html">Home</a>
+                    <a href="../admin_index.html">Home</a>
                 </li>
                 <li class="navbar-item">
                     <a href="#">Paneles</a>
@@ -30,7 +30,7 @@
             <form id="course-form">
                 <input type="text" name="course-name" placeholder="Nombre del curso" id="course_name">
                 <input type="text" name="course-author" placeholder="Autor del curso" id="course_author">
-                <textarea name="course-description" placeholder="Descripcion del curso" id="course_desc">
+                <textarea name="course-description" placeholder="Descripcion del curso" id="course_description">
                 </textarea>
                 <input type="file" name="course-image" placeholder="Image de referencia" id="course_image">
                 <input type="hidden" id="courseIdHiddenField">
@@ -42,10 +42,10 @@
                 </select>
 
                 <div class="button-group">
-                    <button id="save_course_button">
+                    <button id="save-course-button">
                         Crear Curso
                     </button>
-                    <button id="cancel-button">
+                    <button id="cancel-button" type="reset">
                         Cancelar
                     </button>
                 </div>
@@ -53,7 +53,7 @@
 
             <div class="create-lecture-panel">
                 <h1>Lecciones</h1>
-                <a id="create-lecture-button">
+                <a id="create-lecture-button" href="../lectures/edit_lecture.html">
                     Crear Leccion
                 </a>
             </div>
@@ -65,8 +65,8 @@
                         <p>La era Republicana</p>
                     </div>
                     <div class="lecture-modifiers">
-                        <a class="edit-lecture-button">Editar</a>
-                        <a class="delete-lecture-button">Eliminar</a>
+                        <a class="edit-lecture-button" href="../lectures/edit_lecture.html">Editar</a>
+                        <a class="delete-lecture-button" href="../lectures/edit_lecture.html">Eliminar</a>
                     </div>
                 </div>
             </section>

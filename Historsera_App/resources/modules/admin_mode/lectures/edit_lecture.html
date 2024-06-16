@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Editar Leccion</title>
+        <meta name="author" content="Sebastian Rengel Claros">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../../../css/admin_mode/admin-navbar.css">
+        <link rel="stylesheet" href="../../../css/admin_mode/styles_admin.css">
+        <link rel="stylesheet" href="../../../css/admin_mode/lectures_styles/edit_lecture.css">
+    </head>
+    
+    <body>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a href="../admin_index.html">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#">Paneles</a>
+                    <ul>
+                        <li><a href="../categories/categories_manager.html">Categorias</a></li>
+                        <li><a href="../courses/courses_manager.html">Cursos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="superContainer edit-lecture-view">
+            <form id="lecture-form">
+
+                <input type="hidden" id="lectureIdHiddenField">
+
+                <input type="text" name="lecture-title" placeholder="Titulo de la leccion" id="lecture_name">
+                <input type="text" name="lecture-link" placeholder="Enlace de la leccion" id="lecture_link">
+                <textarea name="lecture-description" placeholder="Descripcion de la leccions" id="lecture_description">
+                </textarea>
+                <input type="file" name="lecture-file" placeholder="Archivo Adicional" id="lecture_file">
+
+                <label for="order_num_field">Posicion en visualización </label>
+                <select name="order_num_field" id="order_num_field">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+
+                <div class="button-group">
+                    <button id="save-lecture-button">
+                        Crear Leccion
+                    </button>
+                    <button id="cancel-button" type="reset">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+        </section>
+    </body>
+</html>

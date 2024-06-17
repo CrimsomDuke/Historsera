@@ -56,3 +56,13 @@ def update_lecture(lecture_id):
             setattr(lecture, key, value)
         db.session.commit()
         return jsonify(lecture.to_dict()), 200
+
+@lecture_blueprint.route("/change_order/<int:lecture_id>/<int:new_order>", methods=["PUT"])
+def change_order(lecture_id, new_order):
+    lecture = Lecture.query.get(lecture_id)
+    if lecture is None:
+        return jsonify({"message": "Lecture not found"}), 404
+    else:
+        lecture.order_num = new_order
+        db.session.commit()
+        return jsonify(lecture.to_dict()), 200

@@ -13,12 +13,15 @@
         </nav>
 
         <main class="superContainer login">
-            <form class="loginForm">
+            <form class="loginForm" onsubmit="return isLoginFormValid()">
                 <h3>¿Con ganas de seguir aprendiendo?</h3>
                 <input type="text" id="username_field" name="username_field" 
-                    placeholder="Nombre de usuario" required><br>
+                    placeholder="Nombre de usuario">
                 <input type="password" id="password_field"
-                    placeholder="Contraseña"="password_field" required><br>
+                    placeholder="Contraseña"="password_field">
+                <p id="login_field_error" class="error_label">
+                    usuario o contraseña invalidos
+                </p>
 
                 <button type="submit" class="loginButton">
                     Iniciar Sesión
@@ -29,5 +32,7 @@
                 </p>
             </form>
         </main>
+        <script src="../../../scripts_js/guest_mode_js/login.js">
+        </script>
     </body>
 </html>

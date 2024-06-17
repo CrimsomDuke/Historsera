@@ -95,7 +95,14 @@ input[type="text"], input[type="password"], input[type="email"]{
 
 .form > p{
     text-align: center;
-    margin: 30px;
+}
+
+.error_label{
+    display: none;
+    font-size: 14px;
+    color: red;
+    margin: 0px;
+    padding: 0px;
 }
 
 .form#registerForm > button{
@@ -161,6 +168,7 @@ input[type="text"], input[type="password"], input[type="email"]{
 }
 
 .coursesPanel{
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     background-color: rgba(180, 177, 168, 0.7);;
@@ -172,8 +180,9 @@ input[type="text"], input[type="password"], input[type="email"]{
 }
 
 .courseHomeComponent{
-    max-width: 95%;
-    max-height: 10vh;
+    max-width: 300px;;
+    max-height: 12vh;
+    box-sizing: border-box;
 }
 
 .courseHomeComponent a{
@@ -184,7 +193,7 @@ input[type="text"], input[type="password"], input[type="email"]{
 }
 
 .courseHomeComponent img{
-    width: 30%;
+    width: 300px;
     max-width: 30%;
     max-height: 30%;
     margin: 5px;
@@ -419,6 +428,10 @@ input[type="text"], input[type="password"], input[type="email"]{
 
     #registerBlock form button{
         font-size: 30px;
+    }
+
+    #registerBlock form h3{
+        font-size: 20px;
     }
 
     /*categories-panel y courses_panel*/

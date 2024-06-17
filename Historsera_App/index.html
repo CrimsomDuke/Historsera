@@ -28,17 +28,21 @@
                     </h3>
                 </div>
     
-                <form id="registerForm" class="form">
+                <form id="registerForm" class="form" 
+                    onsubmit="return isRegisterFormValid()">
                     <h3>
                         Unete de manera gratuita y conoce la historia de
                         este maravilloso mundo.
                     </h3>
                     <input type="text" id="username_field" name="username_field" 
-                        placeholder="Nombre de usuario" required><br>
+                        placeholder="Nombre de usuario">
+                        <p id="username_field_error" class="error_label">Nombre invalido</p>
                     <input type="email" id="email_field" name="email_field"
-                        placeholder="Correo electronico" required><br>
+                        placeholder="Correo electronico">
+                        <p id="email_field_error" class="error_label"> Email invalido</p>
                     <input type="password" id="password_field"
-                        placeholder="Contraseña"="password_field" required><br>
+                        placeholder="Contraseña"="password_field">
+                        <p id="password_field_error" class="error_label"> Contraseña invalida</p>
     
                     <button type="submit">Crear cuenta</button>
                     <p>
@@ -82,6 +86,8 @@
                 </div>
             </div>
         </section>
-    </body>
 
+        <script src="resources/scripts_js/guest_mode_js/guest_index.js">
+        </script>
+    </body>
 </html>

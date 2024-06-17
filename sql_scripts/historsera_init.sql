@@ -104,3 +104,55 @@ CREATE OR REPLACE TRIGGER order_num_trigger
 BEFORE INSERT ON tbl_lectures
 FOR EACH ROW 
 EXECUTE FUNCTION sp_LEC_assign_order_num();
+
+-- Cambiar el orden de las lecciones
+CREATE OR REPLACE PROCEDURE sp_LEC_change_order_num(
+    p_lecture_id integer,
+    p_new_order_num integer
+)
+AS
+$$
+DECLARE
+    v_course_id integer;
+    v_old_order_num integer;
+   	v_max_order integer;
+BEGIN
+	
+	SELECT MAX(order_num) INTO v_max_order FROM tbl_lectures;
+	-- VALIDAR QUE EL nuevo orden sea un numero valido
+	IF(p_new_order_num <= v_max_order AND p_new_order_num > 0) THEN
+	
+	    -- obtiene el id del curso y el numero de orden actual de la leccion
+	    SELECT course_id, order_num INTO v_course_id, v_old_order_num
+	    FROM tbl_lectures
+	    WHERE lecture_id = p_lecture_id;
+	
+	    -- Se asigna el nuevo orden
+	    UPDATE tbl_lectures
+	    SET order_num = p_new_order_num
+	    WHERE lecture_id = p_lecture_id;
+	
+	    -- Toca reorganizar las leccioens
+	    IF p_new_order_num < v_old_order_num THEN
+	        -- Si el nuevo orden es menor, aumenta en 1 a las anteriores 
+	        UPDATE tbl_lectures
+	        SET order_num = order_num + 1
+	        WHERE course_id = v_course_id
+	        AND lecture_id != p_lecture_id
+	        AND order_num >= p_new_order_num
+	        AND order_num < v_old_order_num;
+	    ELSE
+	        -- Si es numero es mayor, le resta 1 a las siguientes
+	        UPDATE tbl_lectures
+	        SET order_num = order_num - 1
+	        WHERE course_id = v_course_id
+	        AND lecture_id != p_lecture_id
+	        AND order_num <= p_new_order_num
+	        AND order_num > v_old_order_num;
+	    END IF;
+	 ELSE
+	 	RAISE EXCEPTION 'Ese nuevo numero de orden no es valido';
+	 END IF;
+END;
+$$
+LANGUAGE plpgsql;

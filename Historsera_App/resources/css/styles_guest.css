@@ -167,6 +167,15 @@ input[type="text"], input[type="password"], input[type="email"]{
     text-align: center;
 }
 
+.courses-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: rgba(180, 177, 168, 0.7);;
+    border-radius: 10px;
+}
+
 .coursesPanel{
     box-sizing: border-box;
     display: flex;
@@ -176,10 +185,10 @@ input[type="text"], input[type="password"], input[type="email"]{
     font-size: 20px;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
 }
 
 .courseHomeComponent{
+    min-width: 200px;
     max-width: 300px;;
     max-height: 12vh;
     box-sizing: border-box;
@@ -194,6 +203,7 @@ input[type="text"], input[type="password"], input[type="email"]{
 
 .courseHomeComponent img{
     width: 300px;
+    min-width: 20%;
     max-width: 30%;
     max-height: 30%;
     margin: 5px;
@@ -448,6 +458,10 @@ input[type="text"], input[type="password"], input[type="email"]{
         flex-direction: row;
     }
     .courseComponent{
+        max-width: 100%;
+    }
+
+    .courseComponent img{
         max-width: 40%;
     }
 

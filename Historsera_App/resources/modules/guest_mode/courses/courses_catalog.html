@@ -15,13 +15,13 @@
         <div class="superContainer">
             <div class="block search">
                 <h2 class="titleLabel">Explora los cursos de Historsera</h2>
-                <form id="searchForm" class="form">
+                <form id="searchForm" class="form" onsubmit="return searchCourses(event)">
                     <input type="text" id="search_field" name="search_field" placeholder="Buscar cursos...">
                     <button type="submit">Buscar</button>
                 </form>
             </div>
 
-            <section class="block coursesGroup">
+            <section class="block coursesGroup" id="courses_panel">
                 <div class="courseComponent">
                     <a class="stylish_link" href="course.html">
                         <img src="../../../static/roman_empire.jpg" alt="Curso 1">
@@ -84,6 +84,7 @@
             </section>
         </div>
         
-
+        <script src="../../../scripts_js/guest_mode_js/courses/courses_catalog.js">
+        </script>
     </body>
 </html>

@@ -36,7 +36,7 @@ VALUES ('Historia de la antigua Grecia', 'Ryan Stitt', 'Este curso explorará la
 
 INSERT INTO tbl_courses (course_name, author, description, ref_image_path, category_name)
 VALUES ('Antigua Persia', 'History with Cy', 'history of the peoples known as the Medes and the Persians.', 
-'C:\MediaTemp\images\antique_persian.jpg', 'Historia antigua');
+'C:\MediaTemp\images\antique_persia.jpg', 'Historia antigua');
 
 INSERT INTO tbl_courses (course_name, author, description, ref_image_path, category_name)
 VALUES ('Historia de Roma', 'Timaeus', 'here shall we go from here? Wonder where we will be a year from now?',

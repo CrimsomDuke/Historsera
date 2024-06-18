@@ -34,6 +34,11 @@ def create_user():
     data["points"] = 0
     data["creation_date"] = datetime.now();
 
+    #check if the user already exists
+    user = User.query.filter_by(username=data['username']).first();
+    if user is not None:
+        return jsonify({"message": "User already exists"}), 400
+
     user = User(**data)
     db.session.add(user)
     db.session.commit()
@@ -70,3 +75,14 @@ def get_user_by_username(username):
     else:
         return jsonify(user.to_dict()), 200
 
+#login
+@user_blueprint.route("/login", methods=["POST"])
+def login():
+    data = request.get_json()
+    user = User.query.filter_by(username=data['username']).first();
+    if user is None:
+        return jsonify({"message": "User not found"}), 404
+    else:
+        if user.user_password != data['user_password']:
+            return jsonify({"message": "Invalid password"}), 400
+        return jsonify(user.to_dict()), 200

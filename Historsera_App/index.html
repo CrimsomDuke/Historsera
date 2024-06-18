@@ -29,7 +29,7 @@
                 </div>
     
                 <form id="registerForm" class="form" 
-                    onsubmit="return isRegisterFormValid()">
+                    onsubmit="return isRegisterFormValid(event)">
                     <h3>
                         Unete de manera gratuita y conoce la historia de
                         este maravilloso mundo.
@@ -52,36 +52,17 @@
             </div>
     
             <div class="block row-block">
-                <div class="categoriesPanel">
+                <div class="categoriesPanel" id="categories_panel">
                     <h2>Algunas de nuestras categorías</h2>
-                    <ul>
-                        <li><a href="resources/modules/guest_mode/courses/courses_catalog.html">Edad Antigua</a></li>
-                        <li><a href="resources/modules/guest_mode/courses/courses_catalog.html">Edad Media</a></li>
-                        <li><a href="resources/modules/guest_mode/courses/courses_catalog.html">Edad Moderna</a></li>
-                        <li><a href="resources/modules/guest_mode/courses/courses_catalog.html">Edad Contemporánea</a></li>
+                    <ul id="categories_list">
+                       
                     </ul>
                 </div>
-                <div class="coursesPanel" id="coursesPanel">
+                <div class="courses-container">
                     <h2>Explora nuestros cursos: </h2>
-                    <div class="courseHomeComponent">
-                        <a class="stylish_link" href="resources/modules/guest_mode/courses/course.html">
-                            <img src="resources/static/roman_empire.jpg" alt="Roman Empire">
-                            <p>Curso 1</p>
-                        </a>
+                    <div class="coursesPanel" id="courses_panel">
+        
                     </div>
-                    <div class="courseHomeComponent">
-                        <a class="stylish_link" href="resources/modules/guest_mode/courses/course.html">
-                            <img src="resources/static/roman_empire.jpg" alt="Roman Empire">
-                            <p>Curso 1</p>
-                        </a>
-                    </div>
-                    <div class="courseHomeComponent">
-                        <a class="stylish_link" href="resources/modules/guest_mode/courses/course.html">
-                            <img src="resources/static/roman_empire.jpg" alt="Roman Empire">
-                            <p>Curso 1 asdasda asd as dasdasd as</p>
-                        </a>
-                    </div>
-    
                     <p><a href="resources/modules/guest_mode/courses/courses_catalog.html">Explora mas cursos aqui</a></p>
                 </div>
             </div>

@@ -76,3 +76,21 @@ def get_courses_by_name(course_name):
     for course in courses:
         courses_list.append(course.to_dict())
     return jsonify(courses_list), 200
+
+#search courses by name, author and category
+@course_blueprint.route("/search", methods=["POST"])
+def search_courses():
+    data = request.get_json()
+    search_val = data.get('search')
+    print(search_val);
+    courses = None;
+    if(search_val is None or search_val == "" or search_val == "1 = 1"):
+        #get all courses
+        courses = Course.query.all()
+    else:
+        courses = Course.query.filter(Course.course_name.like(f"%{search_val}%") | Course.author.like(f"%{search_val}%") | Course.category_name.like(f"%{search_val}%")).all()
+
+    courses_list = []
+    for course in courses:
+        courses_list.append(course.to_dict())
+    return jsonify(courses_list), 200

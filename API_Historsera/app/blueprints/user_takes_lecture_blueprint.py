@@ -63,8 +63,8 @@ def get_user_takes_lecture_by_user_lecture():
 @user_takes_lecture_blueprint.route("/get_by_user_id_and_course_id/", methods=["GET"])
 def get_user_takes_lecture_by_user_id_and_course_id():
     #params of the search
-    user_id = request.args.get('user')
-    course_id = request.args.get('course')
+    user_id = request.args.get('user_id')
+    course_id = request.args.get('course_id')
 
     #given the params of user and course, get the lectures in which the user is enrolled
     # and the course is the same as the lectures course
@@ -85,7 +85,17 @@ def get_user_takes_lecture_by_user_id_and_course_id():
 @user_takes_lecture_blueprint.route("/create", methods=["POST"])
 def create_user_takes_lecture():
     data = request.get_json()
-    user_takes_lecture = UserTakesLecture(**data)
+    user_takes_lecture = UserTakesLecture()
+
+    user_takes_lecture.user_id = data['user_id']
+    user_takes_lecture.lecture_id = data['lecture_id']
+    user_takes_lecture.is_finished = False
+
+    #check if the user is already enrolled in the lecture
+    user_takes_lecture_check = UserTakesLecture.query.filter_by(user_id=user_takes_lecture.user_id, lecture_id=user_takes_lecture.lecture_id).first()
+    if user_takes_lecture_check is not None:
+        return jsonify({"message": "User already takes this lecture"}), 400
+    #if not, then we talke the lecture
     db.session.add(user_takes_lecture)
     db.session.commit()
     return jsonify(user_takes_lecture.to_dict()), 201
@@ -103,3 +113,34 @@ def delete_user_takes_lecture():
         db.session.delete(user_takes_lecture)
         db.session.commit()
         return jsonify({"message": "User takes lecture deleted"}), 200
+
+
+
+#check is the user has completed the lecture
+@user_takes_lecture_blueprint.route("/check_finished", methods=["GET"])
+def check_finished():
+    #params of the search
+    user_id = request.args.get('user_id')
+    lecture_id = request.args.get('lecture_id')
+
+    user_takes_lecture = UserTakesLecture.query.filter_by(user_id=user_id, lecture_id=lecture_id).first()
+    if user_takes_lecture is None:
+        return jsonify({"message": "User takes lecture not found"}), 404
+    else:
+        return jsonify({"completed": user_takes_lecture.is_finished}), 200
+
+
+@user_takes_lecture_blueprint.route("/complete_lecture", methods=["PUT"])
+def complete_lecture():
+    #params of json
+    data = request.get_json()
+    user_id = data['user_id']
+    lecture_id = data['lecture_id']
+
+    user_takes_lecture = UserTakesLecture.query.filter_by(user_id=user_id, lecture_id=lecture_id).first()
+    if user_takes_lecture is None:
+        return jsonify({"message": "User takes lecture not found"}), 404
+    else:
+        user_takes_lecture.is_finished = True
+        db.session.commit()
+        return jsonify(user_takes_lecture.to_dict()), 200

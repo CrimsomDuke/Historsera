@@ -43,11 +43,14 @@ async function loadCourseInfo(){
     if(await isEnrolled(user_id, course_id_search)){
         document.getElementById('join-button').style.display = 'none';
         document.getElementById('progress-bar').style.display = 'block';
+        document.getElementById('progress_percent').style.display = 'block';
+
+        setCompletionPercent(user_id, course_id_search);
     }else{
         document.getElementById('join-button').style.display = 'block';
         document.getElementById('progress-bar').style.display = 'none';
+        document.getElementById('progress_percent').style.display = 'none';
     }
-
     
 }
 
@@ -96,5 +99,22 @@ async function isEnrolled(user_id, course_id){
     }else{
         return false;
     }
+}
 
+async function setCompletionPercent(user_id, course_id){
+    var response = await fetch(user_enrolled_in_course_endpoint + '/get_completion_percent'
+        + "?user_id=" + user_id + '&course_id=' + course_id, {
+            method: 'GET',
+            headers : {
+                'Content-Type' : 'application/json'
+            }
+        })
+
+    if(response.status == 200 || response.status == 201){
+        var completion_percent = await response.json();
+        completion_percent = completion_percent.completion_percent;
+        console.log(completion_percent)
+        document.getElementById('progress-bar').value = completion_percent;
+        document.getElementById('progress_percent').textContent = completion_percent + '%';
+    }
 }

@@ -75,7 +75,8 @@ VALUES ('Filosofia a traves de la historia', 'Wheaton College', 'Como la filosof
 
 --curso 1
 INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)
-VALUES ('Que sea Grecia!', 'Veamos como inicia grecia', TRUE, NULL, 
+VALUES ('Que sea Grecia!', 'Veamos como inicia grecia', TRUE, 
+'C:\MediaTemp\pdfs\sample-1.pdf',
 'https://www.youtube.com/watch?v=AlHn5bi-KiY&list=PLYoEIAhIdxYsn0Hael8PfYTbirBrvo6QR&index=1&pp=iAQB', 1);
 
 INSERT INTO tbl_lectures (title, description, is_video, file_path, link, course_id)

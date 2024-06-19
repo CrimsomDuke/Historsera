@@ -1,6 +1,8 @@
 from flask import Blueprint, jsonify, request
 from app.models import UserEnrolledInCourse, User, Course, db
 
+from sqlalchemy import text
+
 user_enrolled_in_course_blueprint = Blueprint('user_enrolled_in_course', __name__, url_prefix="/user_enrolled_in_course")
 
 @user_enrolled_in_course_blueprint.route("/get_all", methods=["GET"])
@@ -82,4 +84,26 @@ def delete_user_enrolled_in_course():
         db.session.delete(user_enrolled_in_course)
         db.session.commit()
         return jsonify({"message" : "user_enrolled_in_course deleted"}), 200
+
+#get completion percent from function in db
+@user_enrolled_in_course_blueprint.route("/get_completion_percent", methods=["GET"])
+def get_completion_percent():
+    user_id = request.args.get('user_id')
+    course_id = request.args.get('course_id')
+
+    if not user_id or not course_id:
+        return jsonify({"error": "Missing user_id or course_id parameter"}), 400
+
+    try:
+        sql = text("SELECT get_completion_percent(:user_id, :course_id)")
+        result = db.session.execute(sql, {'user_id': user_id, 'course_id': course_id}).fetchone()
+
+        completion_percent = result[0] if result else None
+
+        if completion_percent is not None:
+            return jsonify({"completion_percent": completion_percent}), 200
+        else:
+            return jsonify({"error": "Could not retrieve completion percent"}), 500
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 

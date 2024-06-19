@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="../../../css/user_mode/lectures_styles/lecture.css">
     </head>
 
-    <body>
+    <body onload="loadLectureInfo()">
         <nav class="navbar">
             <div class="user_home">
                 <a href="../user_home.html">Home</a>
@@ -29,10 +29,10 @@
                     allowfullscreen>
                 </iframe>
                 <div class="button-group">
-                    <button id="previous-button">
+                    <button id="previous-button" onclick="previous_lecture()">
                         Anterior
                     </button>
-                    <button id="next-button">
+                    <button id="next-button" onclick="next_lecture()">
                         Siguiente
                     </button>
                 </div>
@@ -56,5 +56,8 @@
                 </iframe>
             </section>
         </section>
+
+        <script src="../../../scripts_js/user_mode_js/lectures/lectures.js">
+        </script>
     </body>
 </html>

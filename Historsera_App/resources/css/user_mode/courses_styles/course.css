@@ -60,6 +60,13 @@
     font-style: normal
 }
 
+.control-section #progress_percent{
+    font-size: 140%;
+    color: white;
+    background-color: rgba(99, 153, 233, 0.4);
+    border-radius: 30px;;
+}
+
 .lecturesPanel{
     margin: 0px;
     justify-content: space-between;

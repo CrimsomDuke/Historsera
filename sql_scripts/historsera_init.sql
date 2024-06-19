@@ -156,3 +156,40 @@ BEGIN
 END;
 $$
 LANGUAGE plpgsql;
+
+------------------- REQUIERED FUNCTIOSN --------
+CREATE OR REPLACE FUNCTION get_completion_percent(
+	p_user_id int,
+	p_course_id int
+)
+RETURNS INT AS
+$$
+DECLARE
+    total_lectures integer;
+    finished_lectures integer;
+    completion_percentage numeric;
+BEGIN
+    -- Get the total number of lectures in the course
+    SELECT COUNT(*) INTO total_lectures
+    FROM tbl_lectures
+    WHERE course_id = p_course_id;
+
+    -- Get the number of lectures finished by the user in the course
+    SELECT COUNT(*) INTO finished_lectures
+    FROM tbl_user_takes_lecture
+    JOIN tbl_lectures ON tbl_user_takes_lecture.lecture_id = tbl_lectures.lecture_id
+    WHERE tbl_user_takes_lecture.user_id = p_user_id
+      AND tbl_lectures.course_id = p_course_id
+      AND tbl_user_takes_lecture.is_finished = true;
+
+    -- Calculate the completion percentage
+    IF total_lectures > 0 THEN
+        completion_percentage := (finished_lectures::numeric / total_lectures::numeric) * 100;
+    ELSE
+        completion_percentage := 0;
+    END IF;
+
+    RETURN completion_percentage;
+END;
+$$
+LANGUAGE PLPGSQL;

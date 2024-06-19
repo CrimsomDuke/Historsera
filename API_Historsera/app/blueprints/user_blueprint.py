@@ -75,7 +75,7 @@ def get_user_by_username(username):
     else:
         return jsonify(user.to_dict()), 200
 
-#login
+#login (post por seguridad)
 @user_blueprint.route("/login", methods=["POST"])
 def login():
     data = request.get_json()

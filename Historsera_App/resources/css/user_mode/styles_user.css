@@ -91,6 +91,7 @@ estará hecho**/
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 10px;
+    width: 100%;;
 }
 
 .courseComponent{
@@ -133,6 +134,13 @@ estará hecho**/
     padding: 10px;
 }
 
+#no_courses_label{
+    display: none;
+    font-size: 150%;
+    text-align: center;
+    color: white;
+}
+
 /*Tablets*/
 @media screen and (min-width: 768px) {
     .superContainer{
@@ -140,6 +148,8 @@ estará hecho**/
     }
     .coursesGroup{
         flex-direction: row;
+        align-items: start;
+        justify-content: left;
     }
     .courseComponent{
         max-width: 40%;

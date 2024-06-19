@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="../../../css/user_mode/courses_styles/course.css">
      </head>
 
-    <body>
+    <body onload="loadCourseInfo()">
         <nav class="navbar">
             <div class="user_home">
                 <a href="../user_home.html">Home</a>
@@ -23,17 +23,12 @@
 
         <main class="superContainer">
             <header class="courseHeader">
-                <img src="../../../static/roman_empire.jpg" alt="roman_empire">
+                <img alt="roman_empire" id="course_image">
                 <div class="textDivisor">
-                    <h1>Nombre del curso</h1>
-                    <h3>Autor: Fulanito</h3>
-                    <p>
-                        Descripcion del curso Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi 
-                        corporis harum earum reprehenderit, fugit quas praesentium voluptas rerum explicabo rem 
-                        pariatur quibusdam odit ea cum voluptatem ducimus obcaecati sapiente iure!
-                        Descripcion del curso Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi 
-                        corporis harum earum reprehenderit, fugit quas praesentium voluptas rerum explicabo rem 
-                        pariatur quibusdam odit ea cum voluptatem ducimus obcaecati sapiente iure!
+                    <h1 id="course_name_label"></h1>
+                    <h3 id="course_author_label">Cargando</h3>
+                    <p id="course_description_label">
+                        Cargando...
                     </p>
                 </div>
             </header>
@@ -45,33 +40,12 @@
 
             <section class="lecturesPanel">
                 <h1>Contenido del curso</h1>
-                <div class="lectureItem">
-                    <a class="stylish_link" href="../lectures/lecture.html">
-                        <h3>Titulo de la leccion</h3>
-                    </a>
-                </div>
-                <div class="lectureItem">
-                    <a class="stylish_link" href="../lectures/lecture.html">
-                        <h3>Titulo de la leccion</h3>
-                    </a>
-                </div>
-                <div class="lectureItem">
-                    <a class="stylish_link" href="../lectures/lecture.html">
-                        <h3>Titulo de la leccion</h3>
-                    </a>
-                </div>
-                <div class="lectureItem">
-                    <a class="stylish_link" href="../lectures/lecture.html">
-                        <h3>Titulo de la leccion</h3>
-                    </a>
-                </div>
-                <div class="lectureItem">
-                    <a class="stylish_link" href="../lectures/lecture.html">
-                        <h3>Titulo de la leccion</h3>
-                    </a>
+                <div id="lectures_group">
                 </div>
             </section>
         </main>
-        
+
+        <script src="../../../scripts_js/user_mode_js/courses/course.js">
+        </script>
     </body>
 </html>

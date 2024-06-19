@@ -169,8 +169,9 @@ input[type="text"], input[type="password"], input[type="email"]{
 
 .courses-container{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     background-color: rgba(180, 177, 168, 0.7);;
     border-radius: 10px;
@@ -293,6 +294,12 @@ input[type="text"], input[type="password"], input[type="email"]{
     padding: 10px;
 }
 
+#no_courses_message{
+    display: none;
+    font-size: 150%;
+    color: white;
+}
+
 /*end of Catalog*/
 
 /*Course*/
@@ -309,13 +316,13 @@ input[type="text"], input[type="password"], input[type="email"]{
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-    background-color: wheat;
+    background-color: rgba(245, 222, 179, 0.8);
     border-radius: 10px;
     margin-top: 40px;
 }
 
 .courseHeader .textDivisor{
-    padding: 10px;
+    padding: 20px;
     justify-content: center;
 }
 
@@ -327,6 +334,7 @@ input[type="text"], input[type="password"], input[type="email"]{
     margin: 10px;
     width: 90%;
     height: 200px;
+    max-width: 300px;
 }
 
 .lecturesPanel{
@@ -458,7 +466,7 @@ input[type="text"], input[type="password"], input[type="email"]{
         flex-direction: row;
     }
     .courseComponent{
-        max-width: 100%;
+        max-width: 40%;
     }
 
     .courseComponent img{

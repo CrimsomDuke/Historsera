@@ -3,6 +3,31 @@ const user_endpoint = 'http://localhost:5000/users';
 const categories_endpoint = 'http://localhost:5000/categories';
 const courses_endpoint = 'http://localhost:5000/courses';
 
+async function login_while_creation(my_username, my_password){
+    var formData = {
+        username : my_username,
+        user_password : my_password
+    }
+
+    var response = await fetch(user_endpoint + "/login", {
+        method : 'POST',
+        headers : {
+            'Content-Type' : 'application/json'
+        },
+        body : JSON.stringify(formData)
+    })
+
+    if(response.status === 200){
+        console.log("Usuario encontrado");
+        user = await response.json();
+        console.table(user);
+
+        sessionStorage.setItem('user_id', user.id);
+        //lanzar modo usuario registrado
+        window.location.href = "resources/modules/user_mode/user_home.html";
+    }
+}   
+
 //validacion de los campos de form de registro
 async function isRegisterFormValid(event) {
 
@@ -67,8 +92,8 @@ async function isRegisterFormValid(event) {
 
         if(response.status === 200 || response.status === 201){
             alert("Usuario creado correctamente");
-            //redirect al login
-            window.location.href = "/auth/login.html";
+            //logea automaticamente al user
+            login_while_creation(formData.username, formData.user_password)
         }else if(response.status === 400){
             username_field_error.textContent = 'El usuario ya existe';
             username_field_error.style.display = 'block';
@@ -102,7 +127,7 @@ async function loadCategories(){
         let li = document.createElement('li');
         let a = document.createElement('a');
         a.id = category.category_name;
-        a.href = "resources/modules/guest_mode/courses/courses_catalog.html?category_name=" + category.category_name;
+        a.href = "resources/modules/guest_mode/courses/courses_catalog.html?search_field=" + category.category_name;
         a.innerHTML = category.category_name;
         li.appendChild(a);
         return li;

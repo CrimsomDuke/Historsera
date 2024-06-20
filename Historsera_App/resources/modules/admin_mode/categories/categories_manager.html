@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="../../../css/admin_mode/categories_styles/categories_manager.css">
     </head>
 
-    <body>
+    <body onload="loadCategories()">
         <nav class="navbar">
             <ul class="navbar-list">
                 <li class="navbar-item">
@@ -33,20 +33,15 @@
                 <form id="category-form">
                     <label for="category_field">Nombre de categoria:</label>
                     <input type="text" id="category_field" name="category_field" placeholder="Nombre de la categoria" required>
-                    <button type="submit">Crear categoria</button>
+                    <button type="button" onclick="createCategory()">Crear categoria</button>
                 </form>
             </div>
 
-            <section id="categories-panel" class="categories-panel">
-                <div class="category-item">
-                    <p href="#category-1">Categoria 1</p>
-                    <a type="submit">Borrar</a>
-                </div>
-                <div class="category-item">
-                    <p href="#category-1">Categoria 1</p>
-                    <a type="submit">Borrar</a>
-                </div>
+            <section id="categories_panel" class="categories-panel">
             </section>
         </section>
+
+        <script src="../../../scripts_js/admin_mode_js/categories/categories_manager.js">
+        </script>
     </body>
 </html>

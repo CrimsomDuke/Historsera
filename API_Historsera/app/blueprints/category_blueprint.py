@@ -1,6 +1,6 @@
 
 from flask import Blueprint, jsonify, request
-from app.models import Category, db
+from app.models import Category, Course, db
 
 category_blueprint = Blueprint('categories', __name__, url_prefix="/categories")
 
@@ -31,6 +31,12 @@ def create_category():
 @category_blueprint.route("/delete/<string:category_name>", methods=["DELETE"])
 def delete_category(category_name):
     category = Category.query.get(category_name)
+
+    #check if category is used
+    courses = Course.query.filter_by(category_name=category_name).all()
+    if len(courses) > 0:
+        return jsonify({"message": "Category is used by courses"}), 400
+
     if category is None:
         return jsonify({"message": "Category not found"}), 404
     else:

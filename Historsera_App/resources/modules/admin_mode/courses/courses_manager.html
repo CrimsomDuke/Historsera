@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="../../../css/admin_mode/courses_styles/courses_manager.css">
     </head>
     
-    <body>
+    <body onload="loadCourses()">
         <nav class="navbar">
             <ul class="navbar-list">
                 <li class="navbar-item">
@@ -30,49 +30,11 @@
             <h1>Panel de manejo de Cursos</h1>
             <a href="edit_course.html" class="create-course-button">Crear nuevo curso</a>
 
-            <section class="courses-panel">
-                <div class="courses-item">
-                    <div class="course-info">
-                        <p>ID</p>
-                        <p>El imperio Romano</p>
-                    </div>
-                    <div class="course-modifiers">
-                        <a class="edit-course-button" href="edit_course.html">Editar</a>
-                        <a class="delete-course-button">Eliminar</a>
-                    </div>
-                </div>
-
-                <div class="courses-item">
-                    <div class="course-info">
-                        <p>ID</p>
-                        <p>El imperio Romano El imperio Romano El imperio Romano El imperio Romano El imperio Romano</p>
-                    </div>
-                    <div class="course-modifiers">
-                        <a class="edit-course-button">Editar</a>
-                        <a class="delete-course-button">Eliminar</a>
-                    </div>
-                </div>
-                <div class="courses-item">
-                    <div class="course-info">
-                        <p>ID</p>
-                        <p>El imperio Romano El imperio Romano El imperio Romano El imperio Romano El imperio Romano</p>
-                    </div>
-                    <div class="course-modifiers">
-                        <a class="edit-course-button">Editar</a>
-                        <a class="delete-course-button">Eliminar</a>
-                    </div>
-                </div>
-                <div class="courses-item">
-                    <div class="course-info">
-                        <p>ID</p>
-                        <p>El imperio Romano El imperio Romano  Romano</p>
-                    </div>
-                    <div class="course-modifiers">
-                        <a class="edit-course-button">Editar</a>
-                        <a class="delete-course-button">Eliminar</a>
-                    </div>
-                </div>
+            <section class="courses-panel" id="courses_panel">
             </section>
         </section>
+
+        <script src="../../../scripts_js/admin_mode_js/courses/courses_manager.js">
+        </script>
     </body>
 </html>

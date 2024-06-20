@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="../../css/user_mode/profile.css">
     </head>
 
-    <body>
+    <body onload="loadUserInfo()">
         <section class="superContainer profile-view">
 
             <nav class="navbar">
@@ -35,13 +35,16 @@
             </section>
 
             <section class="button-group">
-                <button id="log-out-button">
+                <button id="log-out-button" onclick="closeSession()">
                     Cerrar Sesion
                 </button>
-                <button id="admin-mode-button">
+                <button id="admin-mode-button" hidden onclick="goToAdminMode()">
                     Modo Administrador
                 </button>
             </section>
         </section>
+
+        <script src="../../scripts_js/user_mode_js/profile.js">
+        </script>
     </body>
 </html>

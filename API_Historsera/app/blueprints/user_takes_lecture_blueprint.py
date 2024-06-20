@@ -137,10 +137,15 @@ def complete_lecture():
     user_id = data['user_id']
     lecture_id = data['lecture_id']
 
+    user = User.query.filter_by(id=user_id).first()
+
     user_takes_lecture = UserTakesLecture.query.filter_by(user_id=user_id, lecture_id=lecture_id).first()
     if user_takes_lecture is None:
         return jsonify({"message": "User takes lecture not found"}), 404
     else:
         user_takes_lecture.is_finished = True
+        #add points to the user
+        user.points += 10;
+
         db.session.commit()
         return jsonify(user_takes_lecture.to_dict()), 200

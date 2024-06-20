@@ -12,6 +12,23 @@
     margin: 10px;
 }
 
+#return_to_course{
+    display: flex;
+    justify-self: flex-start;
+    align-self: flex-start;
+    text-align: left;
+    text-decoration: none;
+    background-color: rgb(117, 198, 171);
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#return_to_course:hover{
+    background-color: black;
+    color: yellow;
+}
+
 .title-section, .title-section h1{
     display: flex;
     flex-direction: column;

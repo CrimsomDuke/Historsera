@@ -1,6 +1,7 @@
 
 const courses_endpoint = 'http://localhost:5000/courses';
 const lectures_endpoint = 'http://localhost:5000/lectures';
+const user_enrolled_in_course_endpoint = 'http://localhost:5000/user_enrolled_in_course';
 
 
 async function loadCourseInfo(){

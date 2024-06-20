@@ -34,9 +34,11 @@ def create_user():
     data["points"] = 0
     data["creation_date"] = datetime.now();
 
-    #check if the user already exists
-    user = User.query.filter_by(username=data['username']).first();
-    if user is not None:
+    #check if the user already exists (username and email must be unique)
+    user_name_repeated = User.query.filter_by(username=data['username']).first()
+    user_email_repeated = User.query.filter_by(email=data['email']).first()
+
+    if user_name_repeated is not None or user_email_repeated is not None:
         return jsonify({"message": "User already exists"}), 400
 
     user = User(**data)

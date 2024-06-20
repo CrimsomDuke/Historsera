@@ -54,7 +54,7 @@ a:hover, button:hover{
 
 .block .options{
     justify-content: space-between;
-    min-height: 90%;
+    min-height: 40%;
 }
 
 .block a{

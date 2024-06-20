@@ -10,6 +10,10 @@ async function loadCourseInfo(){
     let course_id_search = window.location.search.replaceAll('%20', ' ')
         .replaceAll('course_id', '').replaceAll('?=', '');
 
+
+    //verificar si el usuario esta inscrito en el curso
+    let is_enrolled_val = await isEnrolled(user_id, course_id_search);
+
     var response = await fetch(courses_endpoint + '/get_by_id/' + course_id_search, {
         method: 'GET',
         headers: {
@@ -37,10 +41,13 @@ async function loadCourseInfo(){
     course_author_label.textContent = course_data.author;
     course_description_label.textContent = course_data.description;
 
-    loadCourseLectures(course_id_search);
+    if(is_enrolled_val){
+        loadCourseLectures(course_id_search);
+    }
+
 
     //logica de mostrar controlles dependiendo de si ya esta inscrito
-    if(await isEnrolled(user_id, course_id_search)){
+    if(is_enrolled_val){
         document.getElementById('join-button').style.display = 'none';
         document.getElementById('progress-bar').style.display = 'block';
         document.getElementById('progress_percent').style.display = 'block';
@@ -50,6 +57,7 @@ async function loadCourseInfo(){
         document.getElementById('join-button').style.display = 'block';
         document.getElementById('progress-bar').style.display = 'none';
         document.getElementById('progress_percent').style.display = 'none';
+
     }
     
 }
@@ -64,6 +72,7 @@ async function loadCourseLectures(course_id){
 
     function createLecturesItem(lecture){
         //redirige al login al estar en modo visitante
+
         let lecture_item_html = `
             <div class="lectureItem">
                 <a class="stylish_link" href="../lectures/lecture.html?lecture_id=${lecture.lecture_id}">
@@ -116,5 +125,29 @@ async function setCompletionPercent(user_id, course_id){
         console.log(completion_percent)
         document.getElementById('progress-bar').value = completion_percent;
         document.getElementById('progress_percent').textContent = completion_percent + '%';
+    }
+}
+
+
+async function enrollCourse(){
+    let course_id = window.location.search.replaceAll('%20', ' ').replaceAll('course_id', '').replaceAll('?=', '');
+    let user_id = sessionStorage.getItem('user_id');
+
+    var response = await fetch(user_enrolled_in_course_endpoint + '/create', {
+        method: 'POST',
+        headers : {
+            'Content-Type' : 'application/json'
+        },
+        body : JSON.stringify({
+            user_id : user_id,
+            course_id : course_id
+        })
+    })
+
+    if(response.status == 200 || response.status == 201){
+        window.location.reload()
+    }
+    else{
+        alert('Error al inscribirse al curso');
     }
 }

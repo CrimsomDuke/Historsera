@@ -59,7 +59,7 @@ async function isRegisterFormValid(event) {
 
     // Validate email
     field_val = email_field.value;
-    if (field_val === "" || field_val.length < 6 || !field_val.includes("@")) {
+    if (field_val === "" || field_val.length < 8 || !field_val.includes("@") || !field_val.includes(".")) {
         email_field_error.style.display = 'block';
         email_field.focus();
         isValid = false;
@@ -95,7 +95,7 @@ async function isRegisterFormValid(event) {
             //logea automaticamente al user
             login_while_creation(formData.username, formData.user_password)
         }else if(response.status === 400){
-            username_field_error.textContent = 'El usuario ya existe';
+            username_field_error.textContent = 'El usuario o el correo ya existe';
             username_field_error.style.display = 'block';
             username_field.focus();
             isValid = false;

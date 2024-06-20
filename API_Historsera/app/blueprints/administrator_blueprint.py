@@ -22,7 +22,7 @@ def get_administrator(administrator_id):
         return jsonify(administrator.to_dict()), 200
 
 
-@administrator_blueprint.route("/get_admin_user_by_id/<int:administrator_id>", methods=["GET"])
+@administrator_blueprint.route("/get_admin_by_user_id/<int:administrator_id>", methods=["GET"])
 def get_admin_user(administrator_id):
     administrator = Administrator.query.get(administrator_id)
     user = User.query.get(administrator_id)

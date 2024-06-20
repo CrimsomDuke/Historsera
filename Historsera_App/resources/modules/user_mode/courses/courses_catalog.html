@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="../../../css/user_mode/user-navbar.css">
         <link rel="stylesheet" href="../../../css/user_mode/courses_styles/courses-catalog.css">
     </head>
-    <body>
+    <body onload="searchCourses()">
         <nav class="navbar">
             <div class="user_home">
                 <a href="../user_home.html">Home</a>
@@ -24,75 +24,21 @@
         <div class="superContainer">
             <div class="block search">
                 <h2 class="titleLabel">Explora los cursos de Historsera</h2>
-                <form id="searchForm" class="form">
+                <form id="searchForm" class="form" onsubmit="return false;">
                     <input type="text" id="search_field" name="search_field" placeholder="Buscar cursos...">
-                    <button type="submit">Buscar</button>
+                    <button type="button" onclick="searchCourses()">Buscar</button>
                 </form>
             </div>
 
-            <section class="block coursesGroup">
-                <div class="courseComponent">
-                    <a class="stylish_link" href="course.html">
-                        <img src="../../../static/roman_empire.jpg" alt="Curso 1">
-                        <div class="textDivisor">
-                            <h4>Nombre del curso</h4>
-                            <p>
-                                Descripcion del curso Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi 
-                                corporis harum earum reprehenderit, fugit quas praesentium voluptas rerum explicabo rem 
-                                pariatur quibusdam odit ea cum voluptatem ducimus obcaecati sapiente iure!
-                                Descripcion del curso Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi 
-                                corporis harum earum reprehenderit, fugit quas praesentium voluptas rerum explicabo rem 
-                                pariatur quibusdam odit ea cum voluptatem ducimus obcaecati sapiente iure!
-                            </p>  
-                        </div>
-                    </a>
-                </div>
-
-                <div class="courseComponent">
-                    <a class="stylish_link" href="course.html">
-                        <img src="../../../static/roman_empire.jpg" alt="Curso 1">
-                        <div class="textDivisor">
-                            <h4>Nombre del curso</h4>
-                            <p>
-                                Descripcion del curso Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi 
-                                corporis harum earum reprehenderit, fugit quas praesentium voluptas rerum explicabo rem 
-                                pariatur quibusdam odit ea cum voluptatem ducimus obcaecati sapiente iure!
-                            </p>  
-                        </div>
-                    </a>
-                </div>
-
-                <div class="courseComponent">
-                    <a class="stylish_link" href="course.html">
-                        <img src="../../../static/roman_empire.jpg" alt="Curso 1">
-                        <div class="textDivisor">
-                            <h4>Nombre del curso</h4>
-                            <p>
-                                Descripcion del curso Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi 
-                                corporis harum earum reprehenderit, fugit quas praesentium voluptas rerum explicabo rem 
-                                pariatur quibusdam odit ea cum voluptatem ducimus obcaecati sapiente iure!
-                            </p>  
-                        </div>
-                    </a>
-                </div>
-
-                <div class="courseComponent">
-                    <a class="stylish_link" href="course.html">
-                        <img src="../../../static/roman_empire.jpg" alt="Curso 1">
-                        <div class="textDivisor">
-                            <h4>Nombre del curso</h4>
-                            <p>
-                                Descripcion del curso Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi 
-                                corporis harum earum reprehenderit, fugit quas praesentium voluptas rerum explicabo rem 
-                                pariatur quibusdam odit ea cum voluptatem ducimus obcaecati sapiente iure!
-                            </p>  
-                        </div>
-                    </a>
-                </div>
+            <section class="block coursesGroup" id="courses_panel">
 
             </section>
+            <h3 id="no_courses_message">No hay cursos para mostrar</h3>
+
         </div>
         
+        <script src="../../../scripts_js/user_mode_js/courses/courses_catalog.js">
+        </script>
 
     </body>
 </html>

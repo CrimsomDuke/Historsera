@@ -30,6 +30,9 @@ async function loadLectureInfo(){
     var lecture_data = await response.json();
     console.log(lecture_data);
 
+    let course_id = lecture_data.course_id;
+    document.getElementById('return_to_course').href = '../courses/course.html?course_id=' + course_id;
+
     let title_field = document.getElementById('title-field');
     let description_field = document.getElementById('description-field');
     let pdf_viewer = document.getElementById('pdf-viewer');
@@ -59,7 +62,6 @@ async function loadLectureInfo(){
         document.getElementById('previous-button').style.display = 'none';
     }
 
-
 }
 
 async function next_lecture(){
@@ -85,6 +87,12 @@ async function next_lecture(){
     await markLectureAsFinished();
     var next_lecture = await response.json();
     var next_lecture_id = next_lecture.next_lecture_id;
+
+    //si no hay mas lecciones en el curso
+    if(next_lecture_id == -1){
+        alert('No hay mas lecturas en este curso');
+        return;
+    }
 
     //redirecciona a la siguiente lectura
     window.location.replace('lecture.html?lecture_id=' + next_lecture_id);
@@ -162,7 +170,7 @@ async function markLectureAsFinished(){
 
 function getYoutubeVideoID(link){
     let video_id = link.split('v=')[1]; //me quedo con el id del video
-    let ampersand_position = video_id.indexOf('&');
+    let ampersand_position = video_id.indexOf('&'); //el ampersand es el punto final
     if(ampersand_position != -1){
         video_id = video_id.substring(0, ampersand_position);
     }

@@ -1,11 +1,15 @@
 
-
 .edit-course-view{
+    padding-top: 30%;;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
     width: 90%;
     align-items: center;
+    /*No quitar esta wea, se ve feisimo*/
+    height: fit-content;
+    padding-top: 10%;
 }
 
 #course-form{
@@ -16,8 +20,6 @@
     align-items: center;
     background-color: white;
     padding: 20px;
-    /*Evitar que el navbar se coma el formulario*/
-    margin-top: 80vh;
 }
 
 #course-form > *{
@@ -122,11 +124,11 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding-left: 30px;
 }
 
 .create-lecture-panel h1{
     text-align: left;
+    padding-left: 10px;
 }
 
 #create-lecture-button{
@@ -157,7 +159,7 @@
 
 @media screen and (min-width: 1024px){
     .edit-course-view{
-        max-width: 60%;;
+        max-width: 60%;
     }
 
     #course-form{

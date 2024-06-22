@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="../../../css/admin_mode/courses_styles/edit_course.css">
     </head>
 
-    <body>
+    <body onload="loadCourse()">
         <nav class="navbar">
             <ul class="navbar-list">
                 <li class="navbar-item">
@@ -33,16 +33,17 @@
                 <textarea name="course-description" placeholder="Descripcion del curso" id="course_description">
                 </textarea>
                 <input type="file" name="course-image" placeholder="Image de referencia" id="course_image">
+                <p id="has_file_label" style="color: red; display: none;">
+                    Esta curso ya tiene una imagen. Si no seleecionas una, se mantendra la actual.
+                </p>
                 <input type="hidden" id="courseIdHiddenField">
 
                 <label for="category_field">Categoria: </label>
                 <select name="category_field" id="category_field">
-                    <option value="1">Historia</option>
-                    <option value="2">Matematicas</option>
                 </select>
 
                 <div class="button-group">
-                    <button id="save-course-button">
+                    <button id="save-course-button" type="button" onclick="save_course()">
                         Crear Curso
                     </button>
                     <button id="cancel-button" type="reset">
@@ -51,25 +52,18 @@
                 </div>
             </form>
 
-            <div class="create-lecture-panel">
+            <div class="create-lecture-panel" id="create_lecture_panel">
                 <h1>Lecciones</h1>
                 <a id="create-lecture-button" href="../lectures/edit_lecture.html">
                     Crear Leccion
                 </a>
+                
+                <section class="lectures-panel" id="lectures_panel">
+                </section>
             </div>
-
-            <section class="lectures-panel">
-                <div class="lectures-item">
-                    <div class="lecture-info">
-                        <p>ID</p>
-                        <p>La era Republicana</p>
-                    </div>
-                    <div class="lecture-modifiers">
-                        <a class="edit-lecture-button" href="../lectures/edit_lecture.html">Editar</a>
-                        <a class="delete-lecture-button" href="../lectures/edit_lecture.html">Eliminar</a>
-                    </div>
-                </div>
-            </section>
         </section>
+
+        <script src="../../../scripts_js/admin_mode_js/courses/edit_course.js">
+        </script>
     </body>
 </html>

@@ -32,3 +32,19 @@ async function loadCourses(){
         courses_panel.innerHTML += createCourseItem(course);
     }
 }
+
+async function deleteCourse(course_id){
+    let response = await fetch(courses_endpoint + '/delete/' + course_id, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    if(response.status == 200){
+        alert('Curso eliminado con éxito');
+        window.location.reload();
+    } else {
+        alert('Error eliminando el curso. Puede que existan lecciones en el');
+    }
+}

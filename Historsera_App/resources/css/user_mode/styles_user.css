@@ -126,6 +126,7 @@ estará hecho**/
 
 .courseComponent img{
     max-width: 40%;
+    min-height: 150px;
 }
 
 .courseComponent .textDivisor{

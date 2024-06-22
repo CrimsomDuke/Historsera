@@ -41,10 +41,15 @@ async function loadCourseInfo(){
     course_author_label.textContent = course_data.author;
     course_description_label.textContent = course_data.description;
 
-    if(is_enrolled_val){
-        loadCourseLectures(course_id_search);
-    }
+    loadCourseLectures(course_id_search);
 
+    if(!is_enrolled_val){
+
+        let lectures_items = document.getElementsByClassName('lectureItem');
+        console.log(lectures_items);
+
+        
+    }
 
     //logica de mostrar controlles dependiendo de si ya esta inscrito
     if(is_enrolled_val){

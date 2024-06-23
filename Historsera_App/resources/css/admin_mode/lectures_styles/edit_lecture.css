@@ -4,6 +4,9 @@
     gap: 20px;
     width: 90%;
     align-items: center;
+    /*No quitar esta wea, se ve feisimo*/
+    height: fit-content;
+    padding-top: 10%;
 }
 
 #lecture-form{

@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="../../../css/admin_mode/lectures_styles/edit_lecture.css">
     </head>
     
-    <body>
+    <body onload="loadLecture()">
         <nav class="navbar">
             <ul class="navbar-list">
                 <li class="navbar-item">
@@ -27,7 +27,10 @@
         </nav>
 
         <section class="superContainer edit-lecture-view">
-            <form id="lecture-form">
+
+            <h1>Informacion de la leccion: </h1>
+
+            <form id="lecture-form" onsubmit="return false">
 
                 <input type="hidden" id="lectureIdHiddenField">
 
@@ -35,23 +38,28 @@
                 <input type="text" name="lecture-link" placeholder="Enlace de la leccion" id="lecture_link">
                 <textarea name="lecture-description" placeholder="Descripcion de la leccions" id="lecture_description">
                 </textarea>
-                <input type="file" name="lecture-file" placeholder="Archivo Adicional" id="lecture_file">
+                <input type="file" name="lecture-file" placeholder="Archivo Adicional" id="lecture_file"
+                    accept=".pdf">
+                <p style="color: red; display: none;" id="no_file_label" >
+                    Esta leccion ya tiene un archivo, si no seleccionas uno, se mantendra el actual.
+                </p>
 
-                <label for="order_num_field">Posicion en visualización </label>
+                <label for="order_num_field" id="order_num_label">Posicion en visualización </label>
                 <select name="order_num_field" id="order_num_field">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
                 </select>
 
                 <div class="button-group">
-                    <button id="save-lecture-button">
+                    <button id="save-lecture-button" onclick="save_lecture()">
                         Crear Leccion
                     </button>
-                    <button id="cancel-button" type="reset">
+                    <button id="cancel-button" onclick="cancel()">
                         Cancelar
                     </button>
                 </div>
             </form>
         </section>
+
+        <script src="../../../scripts_js/admin_mode_js/lectures/edit_lecture.js">
+        </script>
     </body>
 </html>

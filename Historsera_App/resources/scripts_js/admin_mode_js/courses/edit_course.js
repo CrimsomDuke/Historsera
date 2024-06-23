@@ -3,6 +3,8 @@ const lectures_endpoint = 'http://localhost:5000/lectures';
 const categories_endpoint = 'http://localhost:5000/categories';
 const upload_file_endpoint = 'http://localhost:5000/upload_file';
 
+let course_id = 0;
+
 async function loadCourse(){
     course_id = window.location.search.replaceAll('%20', ' ').replaceAll('course_id', '').replaceAll('?=', '');
 
@@ -20,20 +22,20 @@ async function loadCourse(){
 async function save_course(){
 
     course_id = window.location.search.replaceAll('%20', ' ').replaceAll('course_id', '').replaceAll('?=', '');
-    let has_error = false;
+    let is_ok = false;
 
     if(course_id == 0){
-        has_error =  createCourse();
+        is_ok =  createCourse();
     }else{
-        has_error = updateCourse();
+        is_ok = updateCourse();
     }
 
-    console.log(has_error);
+    console.log(is_ok);
 }
 
 async function createCourse(){   
 
-    let formData = await getCourseInfo();
+    let formData = await getCourseFields();
 
     var response = await fetch(courses_endpoint + '/create', {
         method: 'POST',
@@ -59,7 +61,7 @@ async function createCourse(){
 
 async function updateCourse(){
 
-    let formData = await getCourseInfo();
+    let formData = await getCourseFields();
 
     //remove ref_image_path field if it is empty
     if(!formData.ref_image_path){
@@ -135,7 +137,7 @@ async function loadCourseDetails(course_id){
     }
 }
 
-async function getCourseInfo(){
+async function getCourseFields(){
     let course_name_field = document.getElementById('course_name');
     let course_author_field = document.getElementById('course_author');
     let course_description_field = document.getElementById('course_description');
@@ -185,14 +187,15 @@ async function loadLectures(course_id){
     let lectures_panel = document.getElementById('lectures_panel');
 
     for(let i = 0; i < lectures.length; i++){
+        //usamos el order_num en vez del ids
         lectures_panel.innerHTML += `
             <div class="lectures-item">
                 <div class="lecture-info">
-                    <p>${lectures[i].lecture_id}</p>
+                    <p>${lectures[i].order_num}</p>
                     <p>${lectures[i].title}</p>
                 </div>
                 <div class="lecture-modifiers">
-                    <a class="edit-lecture-button" href="../lectures/edit_lecture.html?lecture_id=${lectures[i].lecture_id}">Editar</a>
+                    <a class="edit-lecture-button" href="../lectures/edit_lecture.html?course_id=${course_id}&lecture_id=${lectures[i].lecture_id}">Editar</a>
                     <a class="delete-lecture-button" href="../lectures/edit_lecture.html" onclick="deleteLecture(${lectures[i].lecture_id})">Eliminar</a>
                 </div>
             </div>
@@ -218,4 +221,14 @@ async function saveImageOfCourse(){
     } else {
         return null;
     }
+}
+
+async function create_lecture(){
+    let course_id = window.location.search.replaceAll('%20', ' ').replaceAll('course_id', '').replaceAll('?=', '');
+    //le pasamos 0 al lecture id para que sepa que es una nueva leccion
+    window.location.replace('../lectures/edit_lecture.html?course_id=' + course_id + '&lecture_id=0');
+}
+
+function cancel(){
+    window.location.href = 'courses_manager.html';
 }

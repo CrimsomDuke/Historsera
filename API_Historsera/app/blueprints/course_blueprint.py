@@ -2,7 +2,7 @@ from datetime import datetime
 
 from flask import Blueprint, jsonify, request
 
-from app.models import Course, db
+from app.models import Course, Lecture, db
 
 course_blueprint = Blueprint('courses', __name__, url_prefix="/courses")
 
@@ -94,3 +94,14 @@ def search_courses():
     for course in courses:
         courses_list.append(course.to_dict())
     return jsonify(courses_list), 200
+
+
+@course_blueprint.route("/get_order_nums/<int:course_id>", methods=["GET"])
+def get_order_num(course_id):
+    lectures = Lecture.query.filter_by(course_id=course_id).order_by(Lecture.order_num).all()
+    order_nums_list = []
+
+    for lecture in lectures:
+        order_nums_list.append(lecture.order_num)
+
+    return jsonify({"order_nums_list" : order_nums_list}), 200

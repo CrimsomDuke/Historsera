@@ -170,6 +170,17 @@ async function markLectureAsFinished(){
 
 function getYoutubeVideoID(link){
     let video_id = link.split('v=')[1]; //me quedo con el id del video
+
+
+    //ejemplos de formatos:
+    //https://youtu.be/kjIVkl34Vig?list=RDkjIVkl34Vig
+    //https://www.youtube.com/watch?v=kjIVkl34Vig&list=RDkjIVkl34Vig&index=1&pp=8AUB
+    
+    if(video_id == null || video_id == undefined){
+        video_id = link.split('youtu.be/')[1]; //tal vez es este formato
+        video_id = video_id.substring(0, video_id.indexOf('?')); //me quedo con el id del video
+    };
+
     let ampersand_position = video_id.indexOf('&'); //el ampersand es el punto final
     if(ampersand_position != -1){
         video_id = video_id.substring(0, ampersand_position);

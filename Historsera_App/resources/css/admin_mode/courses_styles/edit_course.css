@@ -72,6 +72,7 @@
     width: 100%;
     background-color: white;
     min-height: 70vh;
+    overflow: scroll;
 }
 
 .lectures-item{
@@ -159,11 +160,19 @@
 
 @media screen and (min-width: 1024px){
     .edit-course-view{
-        max-width: 60%;
+        max-width: 90%;
+        flex-direction: row;
+        align-items: start;
+    }
+
+    .edit-course-view > *{
+        max-width: 50%;
+        height: 100%;
     }
 
     #course-form{
-        font-size: 130%;
+        font-size: 110%;
+        max-height: fit-content;
     }
 
     #course-description{

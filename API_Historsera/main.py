@@ -32,7 +32,8 @@ def index():
 @app.route('/upload_file', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:
-        return jsonify({'error': 'No file part'}), 400
+        print('No file part');
+        return jsonify({'error': 'No file part'}), 206 # 206 for nothing to load
 
     file = request.files['file']
 

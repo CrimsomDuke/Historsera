@@ -31,7 +31,6 @@ async function deleteCategory(category_name){
     });
 
     if(response.status == 200){
-        alert('Categoria eliminada con exito');
         location.reload();
     }else if(response.status == 400){
         alert('La categoria no existe o no se puede eliminar porque tiene cursos asociados');
@@ -67,8 +66,7 @@ async function createCategory(){
 
     console.log(response.status);
     if(response.status == 200 || response.status == 201){
-        alert('Categoria creada con exito');
-        //location.reload();
+        location.reload();
     }else{
         alert('Error al crear la categoria');
     }

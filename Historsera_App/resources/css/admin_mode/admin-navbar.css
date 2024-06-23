@@ -10,6 +10,7 @@
     min-width: 100%;
     max-width: fit-content;
     font-size: 20px;
+    z-index: 3;
 }
 
 .navbar *{

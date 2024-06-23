@@ -133,6 +133,11 @@ BEGIN
 	    WHERE lecture_id = p_lecture_id;
 	
 	    -- Toca reorganizar las leccioens
+	   
+	   	IF p_new_order_num = v_old_order_num THEN
+	   		RETURN;
+	   	END IF;
+	   
 	    IF p_new_order_num < v_old_order_num THEN
 	        -- Si el nuevo orden es menor, aumenta en 1 a las anteriores 
 	        UPDATE tbl_lectures

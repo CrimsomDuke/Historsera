@@ -90,6 +90,7 @@
 
     .category-creation-panel{
         text-align: left;
+        flex-direction: column;
     }
 
     .category-creation-panel form{

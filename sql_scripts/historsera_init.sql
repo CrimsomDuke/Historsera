@@ -198,3 +198,27 @@ BEGIN
 END;
 $$
 LANGUAGE PLPGSQL;
+
+
+------------- asignar titulo ----------
+CREATE OR REPLACE PROCEDURE assign_user_title(p_user_id INT)
+AS 
+$$
+DECLARE
+    user_points INT;
+    title_to_asign text;
+BEGIN
+    -- Fetch the user's points based on the given user_id
+   SELECT points INTO user_points
+   FROM tbl_users
+   WHERE id = p_user_id;
+   
+   SELECT title_name INTO title_to_asign
+   FROM tbl_titles tt WHERE points_required <= user_points
+   ORDER BY points_required DESC LIMIT 1;
+
+   UPDATE tbl_users SET title_name = title_to_asign
+   WHERE id = p_user_id;
+END;
+$$
+LANGUAGE PLPGSQL;

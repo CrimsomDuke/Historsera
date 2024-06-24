@@ -15,12 +15,12 @@ INSERT INTO tbl_users(username, email, user_password)
 VALUES ('CrimsomDuke', 'sebastianrengelclaros@gmail.com', 'password');
 
 -- first titles in the db
-INSERT INTO tbl_titles (title_name) VALUES ('The Rookie');
-INSERT INTO tbl_titles (title_name) VALUES ('Rata de plataforma');
-INSERT INTO tbl_titles (title_name) VALUES ('Historiador atolondrado');
-INSERT INTO tbl_titles (title_name) VALUES ('Discipulo de Suetonio');
-INSERT INTO tbl_titles (title_name) VALUES ('Memoria Aurea');
-INSERT INTO tbl_titles (title_name) VALUES ('Maestro Neo-erudito');
+INSERT INTO tbl_titles (title_name, points_required) VALUES ('The Rookie', 100);
+INSERT INTO tbl_titles (title_name, points_required) VALUES ('Rata de plataforma', 150);
+INSERT INTO tbl_titles (title_name, points_required) VALUES ('Historiador atolondrado', 200);
+INSERT INTO tbl_titles (title_name, points_required) VALUES ('Discipulo de Suetonio', 500);
+INSERT INTO tbl_titles (title_name, points_required) VALUES ('Memoria Aurea', 1000);
+INSERT INTO tbl_titles (title_name, points_required) VALUES ('Maestro Neo-erudito', 6969);
 
 --INSERT CATEGORIES
 INSERT INTO tbl_categories VALUES ('Historia antigua');

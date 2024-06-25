@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from flask import Blueprint, jsonify, request
+from sqlalchemy import text
 
 from app.models import User, db
 
@@ -23,6 +24,10 @@ def get_user(user_id):
     if user is None:
         return jsonify({"message": "User not found"}), 404
     else:
+        #asignar puntos con SP
+        sql = text('CALL assign_user_title(:user_id)')
+        db.session.execute(sql, {'user_id': user.id})
+        db.session.commit()
         return jsonify(user.to_dict()), 200
 
 
@@ -87,4 +92,10 @@ def login():
     else:
         if user.user_password != data['user_password']:
             return jsonify({"message": "Invalid password"}), 400
+
+        #asignar puntos con SP
+        sql = text('CALL assign_user_title(:user_id)')
+        db.session.execute(sql, {'user_id': user.id})
+        db.session.commit()
+
         return jsonify(user.to_dict()), 200

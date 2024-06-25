@@ -144,19 +144,23 @@ async function getCourseFields(){
     let category_field = document.getElementById('category_field');
 
 
+    document.getElementById('course_name_error').style.display = 'none';
+    document.getElementById('course_author_error').style.display = 'none';
+    document.getElementById('course_description_error').style.display = 'none';
+
      //form validatiopns
-    if(course_name_field.value == '' || course_author_field.value.length < 5){
-        alert('Por favor ingrese un nombre de curso válido');
+    if(course_name_field.value == '' || course_name_field.value.length < 5){
+        document.getElementById('course_name_error').style.display = 'block';
         return;
     }
 
     if(course_author_field.value == '' || course_author_field.value.length < 5){
-        alert('Por favor ingrese un autor de curso válido');
+        document.getElementById('course_author_error').style.display = 'block';
         return;
     }
 
     if(course_description_field.value == '' || course_description_field.value.length < 5){
-        alert('Por favor ingrese una descripción de curso válida');
+        document.getElementById('course_description_error').style.display = 'block';
         return;
     }
 

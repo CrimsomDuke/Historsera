@@ -55,7 +55,10 @@ async function save_lecture(){
     }
 
     console.log('save pressed');
-    window.location.href = '../courses/edit_course.html?course_id=' + course_id;
+    if(is_ok){
+        console.log('guardado')
+        window.location.href = '../courses/edit_course.html?course_id=' + course_id;
+    }
 }
 
 async function createLecture(){
@@ -63,6 +66,27 @@ async function createLecture(){
     let lecture_name_field = document.getElementById('lecture_name');
     let lecture_link_field = document.getElementById('lecture_link');
     let lecture_description_field = document.getElementById('lecture_description');
+
+    //limpiar los error labels
+    document.getElementById('lecture_title_error').style.display = 'none';
+    document.getElementById('lecture_link_error').style.display = 'none';
+    document.getElementById('lecture_description_error').style.display = 'none';
+
+    //validar
+    if(lecture_name_field.value.length < 6 || lecture_name_field.value.length >  40){
+        document.getElementById('lecture_title_error').style.display = 'block';
+        return false;
+    }
+
+    if(lecture_link_field.value.lecture_data < 20){
+        document.getElementById('lecture_link_error').style.display = 'block';
+        return false;
+    }
+
+    if(lecture_description_field.value.length < 5){
+        document.getElementById('lecture_description_error').style.display = 'block';
+        return false;
+    }
 
     let lecture_path = await save_file();
 

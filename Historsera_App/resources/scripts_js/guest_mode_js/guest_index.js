@@ -91,7 +91,6 @@ async function isRegisterFormValid(event) {
         })
 
         if(response.status === 200 || response.status === 201){
-            alert("Usuario creado correctamente");
             //logea automaticamente al user
             login_while_creation(formData.username, formData.user_password)
         }else if(response.status === 400){

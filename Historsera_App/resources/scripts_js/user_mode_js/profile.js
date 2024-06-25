@@ -24,8 +24,8 @@ async function loadUserInfo(){
     //adminbuto
     let admin_mode_button = document.getElementById('admin-mode-button');
 
-    if(user.title == null) title_field.textContent = "No title";
-    else title_field.textContent = user.title;
+    if(user.title_name == null) title_field.textContent = "No title";
+    else title_field.textContent = user.title_name;
 
     console.log(is_user_admin)
 

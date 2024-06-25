@@ -4,6 +4,8 @@ const user_takes_lecture_endpoint = 'http://localhost:5000/user_takes_lecture';
 
 const user_id = sessionStorage.getItem('user_id');
 
+let course_id;
+
 async function loadLectureInfo(){
 
     //obtenemos el parametor y chao chars innecesarios
@@ -30,7 +32,7 @@ async function loadLectureInfo(){
     var lecture_data = await response.json();
     console.log(lecture_data);
 
-    let course_id = lecture_data.course_id;
+    course_id = lecture_data.course_id;
     document.getElementById('return_to_course').href = '../courses/course.html?course_id=' + course_id;
 
     let title_field = document.getElementById('title-field');
@@ -90,7 +92,7 @@ async function next_lecture(){
 
     //si no hay mas lecciones en el curso
     if(next_lecture_id == -1){
-        alert('No hay mas lecturas en este curso');
+        window.location.replace("../courses/course.html?course_id=" + course_id);
         return;
     }
 
@@ -114,7 +116,7 @@ async function previous_lecture(){
     
         if(response.status == 404){
             alert('No hay mas lecturas en este curso');
-            return;
+            window.location.replace("../courses/course.html?course_id=" + course_id);
         }
     
         //nota: no olvidar el await NUNCA MAS, carajo
@@ -169,14 +171,16 @@ async function markLectureAsFinished(){
 }
 
 function getYoutubeVideoID(link){
-    let video_id = link.split('v=')[1]; //me quedo con el id del video
 
-
-    //ejemplos de formatos:
+        //ejemplos de formatos:
     //https://youtu.be/kjIVkl34Vig?list=RDkjIVkl34Vig
     //https://www.youtube.com/watch?v=kjIVkl34Vig&list=RDkjIVkl34Vig&index=1&pp=8AUB
+
+    let video_id = link.split('v=')[1]; //me quedo con el id del video intentando con el 2do formato
     
     if(video_id == null || video_id == undefined){
+
+        //si no funca, intento con el 1er formato
         video_id = link.split('youtu.be/')[1]; //tal vez es este formato
         video_id = video_id.substring(0, video_id.indexOf('?')); //me quedo con el id del video
     };

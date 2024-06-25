@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify, request
 from app.models import Administrator, User, db
+from sqlalchemy import text
 
 administrator_blueprint = Blueprint('administrators', __name__, url_prefix="/administrators")
 
@@ -27,6 +28,10 @@ def get_admin_user(administrator_id):
     administrator = Administrator.query.get(administrator_id)
     user = User.query.get(administrator_id)
     if administrator is not None and user is not None:
+        #asignar puntos con SP
+        sql = text('CALL assign_user_title(:user_id)')
+        db.session.execute(sql, {'user_id': user.id})
+        db.session.commit()
         return jsonify(user.to_dict()), 200
     else:
         return jsonify({"message": "Administrator not found"}), 404

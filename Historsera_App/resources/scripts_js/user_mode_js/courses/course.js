@@ -3,6 +3,8 @@ const courses_endpoint = 'http://localhost:5000/courses';
 const lectures_endpoint = 'http://localhost:5000/lectures';
 const user_enrolled_in_course_endpoint = 'http://localhost:5000/user_enrolled_in_course';
 
+let is_enrolled_val = false;
+
 async function loadCourseInfo(){
 
     user_id = sessionStorage.getItem('user_id');
@@ -12,7 +14,7 @@ async function loadCourseInfo(){
 
 
     //verificar si el usuario esta inscrito en el curso
-    let is_enrolled_val = await isEnrolled(user_id, course_id_search);
+    is_enrolled_val = await isEnrolled(user_id, course_id_search);
 
     var response = await fetch(courses_endpoint + '/get_by_id/' + course_id_search, {
         method: 'GET',
@@ -76,11 +78,9 @@ async function loadCourseLectures(course_id){
     })
 
     function createLecturesItem(lecture){
-        //redirige al login al estar en modo visitante
-
         let lecture_item_html = `
             <div class="lectureItem">
-                <a class="stylish_link" href="../lectures/lecture.html?lecture_id=${lecture.lecture_id}">
+                <a class="stylish_link" onclick="lecture_selected(${lecture.lecture_id})">
                     <h3>${lecture.title}</h3>
                 </a>
             </div>
@@ -154,5 +154,13 @@ async function enrollCourse(){
     }
     else{
         alert('Error al inscribirse al curso');
+    }
+}
+
+function lecture_selected(lecture_id){
+    if(is_enrolled_val){
+        window.location.replace(`../lectures/lecture.html?lecture_id=${lecture_id}`);
+    }else{
+        alert('Podras acceder a la leccion al inscribirte al curso');
     }
 }

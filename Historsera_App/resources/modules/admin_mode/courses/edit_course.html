@@ -31,9 +31,12 @@
             <form id="course-form">
                 <h1>Informacion del curso: </h1>
                 <input type="text" name="course-name" placeholder="Nombre del curso" id="course_name">
+                <p style="color: red; display: none; margin: 0" id="course_name_error">Nombre invalido</p>
                 <input type="text" name="course-author" placeholder="Autor del curso" id="course_author">
+                <p style="color: red; display: none ; margin: 0" id="course_author_error">Autor invalido</p>
                 <textarea name="course-description" placeholder="Descripcion del curso" id="course_description">
                 </textarea>
+                <p style="color: red; display: none; margin: 0" id="course_description_error">Descripcion invalido</p>
                 <input type="file" name="course-image" placeholder="Image de referencia" id="course_image"
                     accept="image/*">
                 <p id="has_file_label" style="color: red; display: none;">

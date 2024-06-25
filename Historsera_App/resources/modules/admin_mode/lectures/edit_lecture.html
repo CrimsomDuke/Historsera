@@ -35,9 +35,12 @@
                 <input type="hidden" id="lectureIdHiddenField">
 
                 <input type="text" name="lecture-title" placeholder="Titulo de la leccion" id="lecture_name">
+                <p style="color: red; display: none; margin: 0" id="lecture_title_error">Titulo invalido</p>
                 <input type="text" name="lecture-link" placeholder="Enlace de la leccion" id="lecture_link">
+                <p style="color: red; display: none; margin: 0" id="lecture_link_error">Enlace a leccion invalido</p>
                 <textarea name="lecture-description" placeholder="Descripcion de la leccions" id="lecture_description">
                 </textarea>
+                <p style="color: red; display: none; margin: 0" id="lecture_description_error">Descripcion invalido</p>
                 <input type="file" name="lecture-file" placeholder="Archivo Adicional" id="lecture_file"
                     accept=".pdf">
                 <p style="color: red; display: none;" id="no_file_label" >

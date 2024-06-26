@@ -38,7 +38,7 @@
                 <p style="color: red; display: none; margin: 0" id="lecture_title_error">Titulo invalido</p>
                 <input type="text" name="lecture-link" placeholder="Enlace de la leccion" id="lecture_link">
                 <p style="color: red; display: none; margin: 0" id="lecture_link_error">Enlace a leccion invalido</p>
-                <textarea name="lecture-description" placeholder="Descripcion de la leccions" id="lecture_description">
+                <textarea name="lecture-description" placeholder="Descripcion de la leccions" id="lecture_description" maxlength="350">
                 </textarea>
                 <p style="color: red; display: none; margin: 0" id="lecture_description_error">Descripcion invalido</p>
                 <input type="file" name="lecture-file" placeholder="Archivo Adicional" id="lecture_file"
@@ -46,6 +46,19 @@
                 <p style="color: red; display: none;" id="no_file_label" >
                     Esta leccion ya tiene un archivo, si no seleccionas uno, se mantendra el actual.
                 </p>
+
+                <div class="only-video-panel">
+                    <label for="only_video_check">Solo video</label>
+                    <input name="only_video_check" type="checkbox" id="only_video_check" checked>
+                </div>
+
+                <div class="text-panel" id="text_panel" style="display: none;">
+                    <input type="text" placeholder="Titulo de la leccion" id="text_header">
+                    <p style="color: red; display: none;" id="no_text_header_label">Minimo 10 caracteres</p>
+                    <textarea placeholder="Contenido de la leccion" value="" id="text_body" maxlength="1600">
+                    </textarea>
+                    <p style="color: red; display: none;" id="no_text_body_label" >Minimo 10 caracteres</p>
+                </div>
 
                 <label for="order_num_field" id="order_num_label">Posicion en visualización </label>
                 <select name="order_num_field" id="order_num_field">

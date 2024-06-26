@@ -36,6 +36,8 @@ CREATE  TABLE tbl_lectures (
 	file_path            varchar(350)    ,
 	link                 varchar(350),
 	order_num 			 integer DEFAULT 0,
+	text_header 		 varchar(100),
+	text_body 			 varchar(1600),
 	course_id            integer  NOT NULL  ,
 	CONSTRAINT pk_tbl_lectures PRIMARY KEY ( lecture_id )
  );

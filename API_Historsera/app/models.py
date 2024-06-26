@@ -66,6 +66,8 @@ class Lecture(db.Model):
     file_path = db.Column(db.String(350));
     link = db.Column(db.String(350));
     order_num = db.Column(db.Integer);
+    text_header = db.Column(db.String(100));
+    text_body = db.Column(db.String(600));
     course_id = db.Column(db.Integer, db.ForeignKey('tbl_courses.course_id'));
 
     def to_dict(self):
@@ -77,6 +79,8 @@ class Lecture(db.Model):
             "file_path": self.file_path,
             "link": self.link,
             "order_num": self.order_num,
+            "text_header": self.text_header,
+            "text_body": self.text_body,
             "course_id": self.course_id
         }
 

@@ -27,7 +27,17 @@
         </nav>
 
         <section class="superContainer edit-course-view">
-            
+            <div class="create-lecture-panel" id="create_lecture_panel">
+                <h1>Lecciones</h1>
+                <a id="create-lecture-button" 
+                        onclick="create_lecture()">
+                    Crear Leccion
+                </a>
+                
+                <section class="lectures-panel" id="lectures_panel">
+                </section>
+            </div>
+
             <form id="course-form">
                 <h1>Informacion del curso: </h1>
                 <input type="text" name="course-name" placeholder="Nombre del curso" id="course_name">
@@ -58,16 +68,6 @@
                 </div>
             </form>
 
-            <div class="create-lecture-panel" id="create_lecture_panel">
-                <h1>Lecciones</h1>
-                <a id="create-lecture-button" 
-                        onclick="create_lecture()">
-                    Crear Leccion
-                </a>
-                
-                <section class="lectures-panel" id="lectures_panel">
-                </section>
-            </div>
         </section>
 
         <script src="../../../scripts_js/admin_mode_js/courses/edit_course.js">

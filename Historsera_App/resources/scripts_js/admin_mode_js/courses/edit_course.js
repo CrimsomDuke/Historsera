@@ -15,6 +15,7 @@ async function loadCourse(){
         document.getElementById('create_lecture_panel').style.display = 'none';
     }else{
         console.log('Loading course with id: ' + course_id);
+        document.getElementById('save-course-button').textContent = 'Actualizar curso';
         loadCourseDetails(course_id);
     }
 }

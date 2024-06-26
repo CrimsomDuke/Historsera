@@ -32,11 +32,48 @@
     height: 300px;
 }
 
+.text-panel{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.text-panel > *{
+    width: 100%;
+}
+
+
+.text-panel input{
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.text-panel textarea{
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 300px;
+}
+
 .button-group{
     display: flex;
     justify-content: center;
     gap: 20px;
     width: 100%;
+}
+
+.only-video-panel{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.only-video-panel input{
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .button-group > button{

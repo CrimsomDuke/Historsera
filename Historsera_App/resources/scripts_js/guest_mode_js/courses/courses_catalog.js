@@ -1,22 +1,10 @@
 
 const courses_endpoint = 'http://localhost:5000/courses';
 
-async function searchCourses(){
+async function loadCourses(){
 
-    let search_field = document.getElementById('search_field');
-    let search_value = search_field.value.trim();
-    
-    //si no hay info en el form de busqueda, usa la search query del buscador
-    console.log(search_value)
-    if(search_value.length < 0 || search_value === ""){
-        search_value = window.location.search.replaceAll('%20', ' ').replaceAll('search_field', '').replaceAll('?=', '');
-        console.log(search_value);
-    }
-
-    //si no se busca nada
-    if(search_value.length < 0 || search_value === null || search_value === undefined){
-        search_value = '1 = 1'; //por convencion, en mi API esta validado
-    }
+    let search_value = window.location.search.replaceAll('%20', ' ').replaceAll('search_field', '').replaceAll('?=', '');
+    document.getElementById('search_field').value = search_value;
 
     var formData = {
         'search' : search_value
@@ -37,6 +25,21 @@ async function searchCourses(){
     }else{
         console.log(await response.text);
     }
+}
+
+async function searchCourses(){
+
+    let search_field = document.getElementById('search_field');
+    let search_value = search_field.value.trim();
+    
+    //si no hay info en el form de busqueda, usa la search query del buscador
+    console.log(search_value)
+    //si no se busca nada
+    if(search_value.length < 0 || search_value === null || search_value === undefined){
+        search_value = '1 = 1'; //por convencion, en mi API esta validado
+    }
+
+    window.location.href = 'courses_catalog.html?search_field=' + search_value;
 }
 
 async function loadCoursesComponents(courses){

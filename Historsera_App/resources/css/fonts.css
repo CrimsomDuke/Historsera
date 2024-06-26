@@ -1,0 +1,9 @@
+@font-face {
+    font-family: Gideon;
+    src: url('../fonts/GideonRoman-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Romanesco;
+    src: url('../fonts/Romanesco-Regular.ttf') format('truetype');
+}

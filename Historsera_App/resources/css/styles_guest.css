@@ -6,10 +6,12 @@ body{
     background-repeat: repeat;
     display: flex;
     flex-direction: row;
+
+    font-family: 'Gideon';
 }
 
 button{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Gideon', Times, serif;
     font-weight: bold;
     font-style: italic;
     background-color: #808080;
@@ -72,9 +74,9 @@ input[type="text"], input[type="password"], input[type="email"]{
     color: rgb(255, 252, 68);
     background-color: black;
     border-radius: 10px;
-    font-size: 120%;
+    font-size: 150%;
     font-style: italic;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Romanesco, Georgia, 'Times New Roman', Times, serif;
 }
 
 /* Home */
@@ -281,8 +283,9 @@ input[type="text"], input[type="password"], input[type="email"]{
 }
 
 .courseComponent a:hover{
-    font-size: 25px;
+    font-size: 155%;
     overflow: auto;
+    font-family: Romanesco;
 }
 
 .courseComponent img{
@@ -371,7 +374,8 @@ input[type="text"], input[type="password"], input[type="email"]{
 .lectureItem .stylish_link:hover{
     background-color: black;
     color: rgb(255, 252, 68);
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 150%;
+    font-family: Romanesco;
     font-style: italic;
 }
 

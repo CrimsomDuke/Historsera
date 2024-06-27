@@ -111,7 +111,7 @@ async function createLecture(){
 
     if(!is_only_video){
         formData['text_header'] = text_header.value;
-        formData['text_body'] = text_body.value;
+        formData['text_body'] = text_body.value.trim();
         formData['is_video'] = false;
     }
 
@@ -140,8 +140,10 @@ async function updateLecture(){
     let text_header = document.getElementById('text_header');
     let text_body = document.getElementById('text_body');
 
-    if(is_form_valid() == false) return false;
-
+    if(is_form_valid() == false) {
+        console.log('form no valido')
+        return false;
+    }
     let lecture_path = await save_file();
 
     //cambiar el orden
@@ -160,7 +162,7 @@ async function updateLecture(){
 
     if(!is_only_video){
         formData['text_header'] = text_header.value;
-        formData['text_body'] = text_body.value;
+        formData['text_body'] = text_body.value.trim();
         formData['is_video'] = false;
     }
 
@@ -271,12 +273,14 @@ function is_form_valid(){
     let is_valid = true;
 
     if(lecture_name_field.value.length < 6 || lecture_name_field.value.length >  40){
-        document.getElementById('lecture_title_error').style.display = 'block';
+        document.getElementById('lecture_name_error').style.display = 'block';
+        lecture_name_field.focus();
         is_valid = false;
     }
     
     if(lecture_description_field.value.length < 5){
         document.getElementById('lecture_description_error').style.display = 'block';
+        lecture_description_field.focus();
         is_valid =  false;
     }
 
@@ -284,11 +288,13 @@ function is_form_valid(){
     if(!only_video_checkbox.checked){
         if(text_header.value.length < 10){
             document.getElementById('no_text_header_label').style.display = 'block';
+            text_header.focus();
             is_valid = false;
         }
 
         if(text_body.value.length < 10){
             document.getElementById('no_text_body_label').style.display = 'block';
+            text_body.focus();
             is_valid = false;
         }
     }

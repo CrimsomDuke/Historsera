@@ -58,6 +58,14 @@
     cursor: pointer;
     font-style: normal;
     font-size: 20px;
+
+    transition: all 0.3s;
+}
+
+.button-group button:hover{
+    transform: scale(1.1);
+    transition: all 0.3s;
+    font-family: Romanesco;
 }
 
 #log-out-button{

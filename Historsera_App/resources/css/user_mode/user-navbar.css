@@ -7,10 +7,13 @@
     display: flex;
     border-style: solid;
     justify-content: space-between;
+    font-family: Gideon;
+    z-index: 3;
 }
 
 .navbar div{
     display: flex;
+    gap: 30px;
     justify-content: space-between;
     padding: 5px;
 }
@@ -20,4 +23,10 @@
     text-decoration: none;
     color: white;
     font-size: 20px;
+    transition: all 0.4s;
+}
+
+.navbar a:hover{
+    transform: scale(1.1);
+    font-size: 230%;
 }

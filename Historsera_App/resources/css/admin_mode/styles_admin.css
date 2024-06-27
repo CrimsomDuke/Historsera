@@ -6,6 +6,7 @@ body{
     display: flex;
     justify-content: center;
     height: 100vh;
+    font-family: 'Gideon', sans-serif;
 }
 
 /*button animation*/
@@ -63,10 +64,36 @@ a:hover, button:hover{
     font-size: 20px;
 }
 
+.options a{
+    background-color: rgb(156, 104, 6);
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    max-width: 400px;
+    
+    transition: all 0.3s;
+}
+
+.options  a:hover{
+    background-color: rgb(38, 171, 204);
+    color: white;
+    font-size: 180%;
+    font-family: Gideon, sans-serif;
+    font-style: italic;
+    border-radius: 10px;
+}
+
+.options > a:hover{
+    background-color: rgb(178, 48, 48);
+}
+
 .block .categories-options{
     margin-top: 20px;
     margin-bottom: 60px;
     width: 100%;
+    transition: all 0.3s;
 }
 
 .categories-options > a{
@@ -79,14 +106,13 @@ a:hover, button:hover{
     max-width: 400px;
 }
 
-.options > a{
-    background-color: rgb(156, 104, 6);
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px;
-    border-style: solid;
-    border-width: 1px;
-    max-width: 400px;
+.categories-options > a:hover{
+    background-color: rgb(38, 171, 204);
+    color: white;
+    font-size: 150%;
+    font-family: Gideon, sans-serif;
+    font-style: italic;
+    border-radius: 10px;
 }
 
 /*Media queries en admin_indexs*/
@@ -147,7 +173,7 @@ a:hover, button:hover{
     .options  a{
         flex-direction: row;
         justify-content: space-between;
-        font-size: 230%;
+        font-size: 190%;
     }
 
 }

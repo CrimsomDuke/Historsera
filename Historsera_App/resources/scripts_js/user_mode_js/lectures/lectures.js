@@ -39,10 +39,14 @@ async function loadLectureInfo(){
     let description_field = document.getElementById('description-field');
     let pdf_viewer = document.getElementById('pdf-viewer');
     let video_player = document.getElementById('video-player');
+    let text_header = document.getElementById('lecture_text_header');
+    let text_body = document.getElementById('lecture_text_body');
 
     //we asign the data to the fields
     title_field.textContent = lecture_data.title;
     description_field.textContent = lecture_data.description;
+    text_header.textContent = lecture_data.text_header;
+    text_body.textContent = lecture_data.text_body;
 
     if(lecture_data.file_path != null){
         pdf_viewer.style.display = 'block';
@@ -52,7 +56,7 @@ async function loadLectureInfo(){
     }
 
     //limpiar el id del video de YT
-    if(lecture_data.link != null){
+    if(lecture_data.link != null && lecture_data.link != ''){
         let video_id = getYoutubeVideoID(lecture_data.link);
         video_player.src = 'https://www.youtube.com/embed/' + video_id;
     }else{
@@ -62,6 +66,11 @@ async function loadLectureInfo(){
     //ocultar boton anterior si es la primera leccion
     if(lecture_data.order_num == 1){
         document.getElementById('previous-button').style.display = 'none';
+    }
+
+    //si la leccion es solo video, ocultar texto
+    if(lecture_data.is_video == true){
+        document.getElementById('lecture_text_panel').style.display = 'none';
     }
 
 }
@@ -92,6 +101,7 @@ async function next_lecture(){
 
     //si no hay mas lecciones en el curso
     if(next_lecture_id == -1){
+        alert('No hay mas lecciones en este curso');
         window.location.replace("../courses/course.html?course_id=" + course_id);
         return;
     }

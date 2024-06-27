@@ -22,6 +22,8 @@
     color: black;
     padding: 5px;
     border-radius: 10px;
+    font-size: 150%;
+    transition: all 0.3s;
 }
 
 #return_to_course:hover{
@@ -56,6 +58,37 @@
     font-size: 150%;
     cursor: pointer;
     padding: 10px;
+    transition: all 0.3s;
+}
+
+.button-group button:hover{
+    transform: scale(1.1);
+    background-color: black;
+    color: yellow;
+}
+
+/*si las lecciones incluyen texto*/
+.lecture-text-panel{
+
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    background-image: url('../../../static/old_paper.png');
+    background-repeat: repeat-y;
+    background-size: cover;
+
+    min-width: 300px;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+
+    font-family: Romanesco;
+    font-size: 170%;
+}
+
+.lecture-text-panel h1, p{
+    margin: 50px;
 }
 
 .description-section{

@@ -94,8 +94,12 @@ async function createLecture(){
     let text_header = document.getElementById('text_header');
     let text_body = document.getElementById('text_body');
 
-    if(is_form_valid() == false) return false;
+    if(is_form_valid() == false) {
+        console.log('Mal form')
+        return false;
+    }
 
+        //guardar el archivo
     let lecture_path = await save_file();
 
 
@@ -144,6 +148,7 @@ async function updateLecture(){
         console.log('form no valido')
         return false;
     }
+    //guardar el archivo
     let lecture_path = await save_file();
 
     //cambiar el orden
@@ -155,9 +160,13 @@ async function updateLecture(){
         'title' : lecture_name_field.value,
         'description' : lecture_description_field.value,
         'is_video' : lecture_link.value == null ? false : true,
-        'file_path' : lecture_path,
         'link' : lecture_link_field.value,
         'course_id' : course_id
+    }
+
+    //si se agrega o se cambia el archivo
+    if(lecture_path != null) {
+        formData['file_path'] = lecture_path;
     }
 
     if(!is_only_video){
@@ -273,7 +282,7 @@ function is_form_valid(){
     let is_valid = true;
 
     if(lecture_name_field.value.length < 6 || lecture_name_field.value.length >  40){
-        document.getElementById('lecture_name_error').style.display = 'block';
+        document.getElementById('lecture_title_error').style.display = 'block';
         lecture_name_field.focus();
         is_valid = false;
     }

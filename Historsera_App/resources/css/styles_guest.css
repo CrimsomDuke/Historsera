@@ -49,6 +49,7 @@ input[type="text"], input[type="password"], input[type="email"]{
     padding: 10px;
     text-decoration: none;
     color: white;
+    transition: all 0.3s;
 }
 
 .superContainer{
@@ -74,9 +75,9 @@ input[type="text"], input[type="password"], input[type="email"]{
     color: rgb(255, 252, 68);
     background-color: black;
     border-radius: 10px;
-    font-size: 150%;
     font-style: italic;
     font-family: Romanesco, Georgia, 'Times New Roman', Times, serif;
+    font-size: 150%;
 }
 
 /* Home */
@@ -93,6 +94,7 @@ input[type="text"], input[type="password"], input[type="email"]{
     padding-right: 20px;
     background-color: rgba(245, 222, 179, 0.8);
     margin: 10px auto;
+    min-height: 500px;
 }
 
 .form > p{
@@ -162,11 +164,13 @@ input[type="text"], input[type="password"], input[type="email"]{
     align-items: center;
     margin-left: 5px;
     margin-right: 5px;
+    min-height: 60px;
 }
 
 .categoriesPanel li a{
     width: 100%;
     text-align: center;
+    transition: all 0.3s;
 }
 
 .courses-container{
@@ -202,6 +206,7 @@ input[type="text"], input[type="password"], input[type="email"]{
     background-color: white;
     max-width: 100%;
     align-items: center;
+    transition: all 0.3s;
 }
 
 .courseHomeComponent img{
@@ -264,6 +269,7 @@ input[type="text"], input[type="password"], input[type="email"]{
     max-height: 200px;
     border-radius: 10px;
     margin: 10px;
+    transition: all 0.3s;
 }
 
 .courseComponent a{
@@ -272,6 +278,7 @@ input[type="text"], input[type="password"], input[type="email"]{
     padding: 10px;
     max-height: 90%;
     overflow: hidden;
+    transition: all 0.3s;
 }
 
 .courseComponent .textDivisor p{
@@ -286,6 +293,7 @@ input[type="text"], input[type="password"], input[type="email"]{
     font-size: 155%;
     overflow: auto;
     font-family: Romanesco;
+    scale: 1.1;
 }
 
 .courseComponent img{

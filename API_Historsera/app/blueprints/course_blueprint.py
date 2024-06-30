@@ -45,12 +45,15 @@ def update_course(course_id):
 @course_blueprint.route("/delete/<int:course_id>", methods=["DELETE"])
 def delete_course(course_id):
     course = Course.query.get(course_id)
-    if course is None:
-        return jsonify({"message": "Course not found"}), 404
-    else:
-        db.session.delete(course)
-        db.session.commit()
-        return jsonify({"message": "Course deleted"}), 200
+    try:
+        if course is None:
+            return jsonify({"message": "Course not found"}), 404
+        else:
+            db.session.delete(course)
+            db.session.commit()
+            return jsonify({"message": "Course deleted"}), 200
+    except:
+        return jsonify({"message": "Course has dependencies"}), 400
 
 @course_blueprint.route("/get_by_category/<string:category_name>", methods=["GET"])
 def get_courses_by_category(category_name):

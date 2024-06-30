@@ -59,7 +59,7 @@ async function isRegisterFormValid(event) {
 
     // Validate email
     field_val = email_field.value;
-    if (field_val === "" || field_val.length < 8 || !field_val.includes("@") || !field_val.includes(".")) {
+    if (field_val === "" || field_val.length < 12 || !field_val.includes("@") || !field_val.includes(".")) {
         email_field_error.style.display = 'block';
         email_field.focus();
         isValid = false;

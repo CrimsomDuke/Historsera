@@ -21,7 +21,7 @@ async function loadCourses(){
                 </div>
                 <div class="course-modifiers">
                     <a class="edit-course-button" href="edit_course.html?course_id=${course.course_id}">Editar</a>
-                    <a class="delete-course-button" onclick="deleteCourse('${course.course_id}')">Eliminar</a>
+                    <a class="delete-course-button" onclick="deleteCourse(${course.course_id})">Eliminar</a>
                 </div>
             </div>
         `
@@ -34,6 +34,7 @@ async function loadCourses(){
 }
 
 async function deleteCourse(course_id){
+    console.log(course_id)
     let response = await fetch(courses_endpoint + '/delete/' + course_id, {
         method: 'DELETE',
         headers: {
@@ -47,4 +48,5 @@ async function deleteCourse(course_id){
     } else {
         alert('Error eliminando el curso. Puede que existan lecciones en el');
     }
+    console.log(response);
 }

@@ -42,10 +42,14 @@ input[type="text"], input[type="password"], input[type="email"]{
     flex-direction: column;
 }
 
+.user-index-view{
+    min-width: 90%;
+}
+
 .welcome-message{
     display: flex;
     flex-direction: column;
-    color: goldenrod;
+    color: rgb(255, 198, 53);
     font-size: 140%;
 }
 

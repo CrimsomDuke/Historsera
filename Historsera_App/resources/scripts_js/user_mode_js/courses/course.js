@@ -45,14 +45,6 @@ async function loadCourseInfo(){
 
     loadCourseLectures(course_id_search);
 
-    if(!is_enrolled_val){
-
-        let lectures_items = document.getElementsByClassName('lectureItem');
-        console.log(lectures_items);
-
-        
-    }
-
     //logica de mostrar controlles dependiendo de si ya esta inscrito
     if(is_enrolled_val){
         document.getElementById('join-button').style.display = 'none';
@@ -78,6 +70,7 @@ async function loadCourseLectures(course_id){
     })
 
     function createLecturesItem(lecture){
+
         let lecture_item_html = `
             <div class="lectureItem">
                 <a class="stylish_link" onclick="lecture_selected(${lecture.lecture_id})">

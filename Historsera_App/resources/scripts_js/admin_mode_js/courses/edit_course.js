@@ -201,12 +201,28 @@ async function loadLectures(course_id){
                 </div>
                 <div class="lecture-modifiers">
                     <a class="edit-lecture-button" href="../lectures/edit_lecture.html?course_id=${course_id}&lecture_id=${lectures[i].lecture_id}">Editar</a>
-                    <a class="delete-lecture-button" href="../lectures/edit_lecture.html" onclick="deleteLecture(${lectures[i].lecture_id})">Eliminar</a>
+                    <a class="delete-lecture-button" onclick="deleteLecture(${lectures[i].lecture_id})">Eliminar</a>
                 </div>
             </div>
         `;
     }
 
+}
+
+async function deleteLecture(lecture_id){
+    var response = await fetch(lectures_endpoint + '/delete/' + lecture_id, {
+        method: 'DELETE',
+        headers : {
+            'Content-Type' : 'application/json'
+        }
+    });
+
+    if(response.status == 200 || response.status == 201){
+        alert('Lección eliminada con éxito');
+        window.location.reload();
+    } else {
+        alert('Error eliminando la lección. Puede que tenga objetos asociados');
+    }
 }
 
 

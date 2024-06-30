@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 from sqlalchemy import text
-from app.models import Lecture, db
+from app.models import Lecture, UserTakesLecture, db
 
 lecture_blueprint = Blueprint('lectures', __name__, url_prefix="/lectures")
 
@@ -43,13 +43,23 @@ def create_lecture():
 
 @lecture_blueprint.route("/delete/<int:lecture_id>", methods=["DELETE"])
 def delete_lecture(lecture_id):
-    lecture = Lecture.query.get(lecture_id)
-    if lecture is None:
-        return jsonify({"message": "Lecture not found"}), 404
-    else:
-        db.session.delete(lecture)
-        db.session.commit()
-        return jsonify({"message": "Lecture deleted"}), 200
+    try:
+        lecture = Lecture.query.get(lecture_id)
+
+        #borrar las relaciones de la tabla UserTakesLecture
+        user_takes_lectures = UserTakesLecture.query.filter_by(lecture_id=lecture_id).all()
+        for user_takes_lecture in user_takes_lectures:
+            db.session.delete(user_takes_lecture)
+            db.session.commit()
+
+        if lecture is None:
+            return jsonify({"message": "Lecture not found"}), 404
+        else:
+            db.session.delete(lecture)
+            db.session.commit()
+            return jsonify({"message": "Lecture deleted"}), 200
+    except Exception as e:
+        return jsonify({"message": "Lecture has dependencies"}), 400
 
 
 @lecture_blueprint.route("/update/<int:lecture_id>", methods=["PUT"])

@@ -10,6 +10,7 @@ async function loadCourses(){
         'search' : search_value
     }
 
+    //busqueda de cursos
     var response = await fetch(courses_endpoint + '/search', {
         method : 'POST',
         headers : {

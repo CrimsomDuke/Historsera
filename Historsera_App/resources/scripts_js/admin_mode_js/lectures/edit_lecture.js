@@ -306,6 +306,13 @@ function is_form_valid(){
             text_body.focus();
             is_valid = false;
         }
+    }else{
+        //si la leccion es solo video, iene que haber un link
+        if(lecture_link_field.value.length < 10){
+            document.getElementById('lecture_link_error').style.display = 'block';
+            lecture_link_field.focus();
+            is_valid = false;
+        }
     }
 
     if(!is_valid) return false; //si no es valido, rechaza el form

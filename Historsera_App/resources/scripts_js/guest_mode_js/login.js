@@ -19,12 +19,14 @@ async function isLoginFormValid(event){
     //username
     field_val = username_field.value;
     if(field_val == "") {
+        login_field_error.textContent = 'Credenciales no validas';
         username_field.focus();
         isValid = false;
     }
     //password
     field_val = password_field.value;
     if(field_val == ""){
+        login_field_error.textContent = 'Credenciales no validas';
         password_field.focus();
         isValid = false;
     }

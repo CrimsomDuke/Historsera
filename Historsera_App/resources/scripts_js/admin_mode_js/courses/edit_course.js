@@ -149,20 +149,26 @@ async function getCourseFields(){
     document.getElementById('course_author_error').style.display = 'none';
     document.getElementById('course_description_error').style.display = 'none';
 
+    let isValid = true;
+
      //form validatiopns
     if(course_name_field.value == '' || course_name_field.value.length < 5){
         document.getElementById('course_name_error').style.display = 'block';
-        return;
+        isValid = false;
     }
 
     if(course_author_field.value == '' || course_author_field.value.length < 5){
         document.getElementById('course_author_error').style.display = 'block';
-        return;
+        isValid = false;
     }
 
     if(course_description_field.value == '' || course_description_field.value.length < 5){
         document.getElementById('course_description_error').style.display = 'block';
-        return;
+        isValid = false;
+    }
+
+    if(isValid == false){
+        return; //romper el procedimieno
     }
 
     //upload image

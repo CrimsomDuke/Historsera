@@ -72,6 +72,7 @@
     width: 100%;
     background-color: white;
     min-height: 70vh;
+    max-height: 80vh;
     overflow: scroll;
 }
 

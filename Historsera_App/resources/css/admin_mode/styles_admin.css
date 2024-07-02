@@ -28,6 +28,10 @@ a:hover, button:hover{
     height: 100vh;
 }
 
+.admin-index{
+    margin-top: 100px;
+}
+
 .block{
     display: flex;
     flex-direction: column;

@@ -2,7 +2,7 @@ from datetime import datetime
 
 from flask import Blueprint, jsonify, request
 
-from app.models import Course, Lecture, db
+from app.models import Course, UserEnrolledInCourse, Lecture, db
 
 course_blueprint = Blueprint('courses', __name__, url_prefix="/courses")
 
@@ -49,6 +49,13 @@ def delete_course(course_id):
         if course is None:
             return jsonify({"message": "Course not found"}), 404
         else:
+
+            #borrar las relaciones de la tabla UserEnrolledInCourse
+            user_enrolled_in_courses = UserEnrolledInCourse.query.filter_by(course_id=course_id).all()
+            for user_enrolled_in_course in user_enrolled_in_courses:
+                db.session.delete(user_enrolled_in_course)
+                db.session.commit()
+
             db.session.delete(course)
             db.session.commit()
             return jsonify({"message": "Course deleted"}), 200
